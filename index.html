@@ -107,11 +107,17 @@
     #content-parole {
         margin-right: 320px;
     }
-    /* Forza il reset se non c’è contenuto */
+    /* Azzeriamo margin se content vuoto */
     #content-tribuna:empty,
     #content-inediti:empty,
     #content-parole:empty {
         margin-right: 0;
+    }
+    /* Reset float dopo sidebar */
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
     }
 }
 
