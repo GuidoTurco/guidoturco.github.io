@@ -46,8 +46,12 @@
         }
         .main-image {
             width: 100%;
+            max-width: 800px;     /* Limita la larghezza massima */
             height: auto;
-            margin: 50px 0;
+            max-height: 500px;    /* Riduce l'altezza massima – regola questo valore come preferisci */
+            object-fit: cover;    /* Ritaglia l'immagine in modo elegante se è troppo alta */
+            margin: 50px auto;    /* Centra l'immagine */
+            display: block;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
