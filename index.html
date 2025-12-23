@@ -91,26 +91,29 @@
         }
         /* Sidebar a lato destro solo su desktop */
     @media (min-width: 900px) {
-        #archive-inediti,
-        #archive-tribuna,
-        #archive-parole {
-            float: right;
-            width: 260px;
-            margin-left: 40px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-left: 1px solid #eee;
-            font-size: 0.95em;
-        }
-        #content-inediti,
-        #content-tribuna,
-        #content-parole {
-            margin-right: 320px; /* Spazio per la sidebar */
-        }
-        .post hr {
-            clear: both; /* Evita problemi di layout */
-        }
+    #archive-tribuna,
+    #archive-inediti,
+    #archive-parole {
+        float: right;
+        width: 260px;
+        margin-left: 40px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-left: 1px solid #eee;
+        font-size: 0.95em;
     }
+    #content-tribuna,
+    #content-inediti,
+    #content-parole {
+        margin-right: 320px;
+    }
+    /* Forza il reset se non c’è contenuto */
+    #content-tribuna:empty,
+    #content-inediti:empty,
+    #content-parole:empty {
+        margin-right: 0;
+    }
+}
 
     /* Stile leggero per la sidebar anche su mobile (sopra i contenuti) */
     #archive-inediti,
