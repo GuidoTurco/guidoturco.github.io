@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notariqon – casa d'Arno</title>
+    <title>Notariqon casa d'Arno</title>
     <style>
         body {
-            font-family: 'Helvetica', sans-serif;
+            font-family: Helvetica, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -94,13 +94,13 @@
                 display: block;
                 margin: 12px 0;
             }
-            h1 { font-size: 2.4em; }
+            h1 {
+                font-size: 2.4em;
+            }
         }
         /* Sidebar a lato destro solo su desktop */
         @media (min-width: 900px) {
-            #archive-tribuna,
-            #archive-inediti,
-            #archive-disiecta {
+            .archive-tribuna, .archive-inediti, .archive-disiecta {
                 float: right;
                 width: 260px;
                 margin-left: 40px;
@@ -109,34 +109,25 @@
                 border-left: 1px solid #eee;
                 font-size: 0.95em;
             }
-            #content-tribuna,
-            #content-inediti,
-            #content-disiecta {
+            .content-tribuna, .content-inediti, .content-disiecta {
                 margin-right: 320px;
             }
             /* Azzeriamo margin se content vuoto */
-            #content-tribuna:empty,
-            #content-inediti:empty,
-            #content-disiecta:empty {
+            .content-tribuna.empty, .content-inediti.empty, .content-disiecta.empty {
                 margin-right: 0;
             }
             /* Reset float dopo sidebar */
-            section::after {
+            section:after {
                 content: "";
                 display: table;
                 clear: both;
             }
         }
-
         /* Stile leggero per la sidebar anche su mobile (sopra i contenuti) */
-        #archive-inediti,
-        #archive-tribuna,
-        #archive-disiecta {
+        .archive-inediti, .archive-tribuna, .archive-disiecta {
             margin-bottom: 40px;
         }
-        #archive-inediti h3,
-        #archive-tribuna h3,
-        #archive-disiecta h3 {
+        .archive-inediti h3, .archive-tribuna h3, .archive-disiecta h3 {
             font-size: 1.4em;
             margin-bottom: 15px;
             border-bottom: 1px solid #eee;
@@ -145,7 +136,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Notariqon</h1>
         <p class="subtitle">casa d'Arno</p>
@@ -158,206 +148,193 @@
             <a href="#rete">In Rete</a>
             <a href="#contatti">Contatti</a>
         </nav>
+        <img src="images/imagetwo.png" alt="Arno" class="main-image">
     </header>
 
-    <img src="images/image_two.png" alt="Arno" class="main-image">
-
     <section id="bio">
-    <h2>Biografia</h2>
-    <p>Vivo in Francia, a Bordeaux, giù di lì, dal 2008. Sposato con Anna bell'Anna, ho due figliuole e una nipotina. In Francia ci sono venuto per lavoro, dopo molta Italia e un po' di Germania. Lavoro nell'informatica da quasi quarant'anni, ho fatto un po' di tutto, ultimamente sono Direttore Progetti Innovazione. Il lavoro mi è riuscito bene, non so nemmeno come, e, come di tutte le cose che vengono bene senza sforzo, m'importa poco.<br><br>
-    
-    Come Montale dico sempre che il mio mestiere, oltre che vivere s'intende, è un altro. Scrivo, <em>depuis toujours</em>, pubblico qualcosa, poco, vinco qualche premio: l'ultimo Arcipelago Itaca 2021. Facevo expo di foto e poesie, le migliori qui a Bordeaux, tre in tutto, acqua passata, non ne ho più voglia.<br><br>
-    
-    Invecchio, come Chatwin mi chiedo spesso Cosa Ci Faccio Qui. Lo so, ma me lo chiedo lo stesso, è più bello così. Non ho più voglia di lavorare. Studio ma mi stanco, leggo e mi annoio un sacco di volte, ma i cieli sono larghi in Aquitania, l'oceano è vicino, piove sovente.<br><br>
-    
-    Tengo per il Torino, anche se è quasi sempre una pena. Sono solo qui, solo con le mie donne, sono solo ma non mi sento solo. Tutto questo e molto altro, o poco, non lo so.<br><br>
-    
-    E tu che cerchi?</p>
+        <h2>Biografia</h2>
+        <p>Vivo in Francia, a Bordeaux, giù di lì, dal 2008. Sposato con Anna bell'Anna, ho due figliuole e una nipotina. In Francia ci sono venuto per lavoro, dopo molta Italia e un po' di Germania. Lavoro nell'informatica da quasi quarant'anni, ho fatto un po' di tutto, ultimamente sono Direttore Progetti Innovazione. Il lavoro mi è riuscito bene, non so nemmeno come, e, come di tutte le cose che vengono bene senza sforzo, m'importa poco.<br><br>Come Montale dico sempre che il mio mestiere, oltre che vivere s'intende, è un altro. Scrivo, <em>depuis toujours</em>, pubblico qualcosa, poco, vinco qualche premio (l'ultimo Arcipelago Itaca 2021). Facevo expo di foto e poesie, le migliori qui a Bordeaux, tre in tutto, acqua passata, non ne ho più voglia.<br><br>Invecchio, come Chatwin mi chiedo spesso Cosa Ci Faccio Qui. Lo so, ma me lo chiedo lo stesso, è più bello così. Non ho più voglia di lavorare. Studio ma mi stanco, leggo e mi annoio un sacco di volte, ma i cieli sono larghi in Aquitania, l'oceano è vicino, piove sovente.<br><br>Tengo per il Torino, anche se è quasi sempre una pena. Sono solo qui, solo con le mie donne, sono solo ma non mi sento solo. Tutto questo e molto altro, o poco, non lo so.<br><br>E tu che cerchi?</p>
     </section>
 
     <section id="pubblicazioni">
-    <h2>Ultime Pubblicazioni</h2>
-    <ul>
-        <li>
-            <h3>Arno e Altre Figure - 2024</h3>
-            <p>Essere non è essere quello che si è, ma quello che si vorrebbe essere.<br>
-                    Che cosa potrà mai significare svegliarsi, radersi, vestirsi, fare colazione, lavarsi i denti e profumarsi, indossare giacca e berretto, fare tutto questo per servire un'immagine di sé che non si riconosce?<br>
-                    Arno non ci pensa nemmeno più, a tutte le biografie che si è inventato. Ci si trova benissimo. Lungo le giornate, e a momenti alterni, non fa nessuno sforzo per interpretarle: una dopo l'altra, una insieme all'altra. Quelle biografie sono le sue, sono lui, Arno.<br>
-                    La maggior parte degli uomini crede a tutto, evita le fatiche dell'indagine e quelle, ben più gravose, dell'acribia. Alcuni affermano che la verità non esiste, o che non si può dire.<br>
-                    Arno ha un modo diverso di considerare le cose. Tutto si può dire, anche la verità. Anzi, soprattutto la verità. È vero, a volte si nasconde, traccia percorsi inconsueti, segue un lunario particolare e non si sa se sarà l'umido ovvero il secco che la farà venire fuori. Arno la verità non la cerca, la inventa. Se quella si fa trovare, tanto meglio, altrimenti lo sforzo è solo suo, quello di fabbricare <em>ex novo</em> uno scaffale di verità, nuove sedie di verità, una biblioteca ben fornita, un archivio pieno di raccoglitori di verità, album fotografici di verità, cantine, ripostigli e soffitte piene di verità. Di molte verità, di tutte le verità che gli servono per continuare a vivere.</p>
-            <a href="https://www.scalpendi.eu/catalogo/assemblaggi-e-sdoppiamenti/arno-e-altre-figure/" target="_blank" rel="noopener">Maggiori dettagli</a> | 
-            <a href="https://www.amazon.it/Arno-altre-figure-Guido-Turco/dp/B0CB77KZBZ" target="_blank" rel="noopener">Acquista</a>
-        </li>
-        <li>
-            <h3>Un'Ultima Cosa Prima di Partire - 2019</h3>
-            <p>Sono un frutto caduto dall'albero genealogico. Gli altri stanno là in alto, attaccati ai rami, io sto per terra, in mezzo all'erba e alle foglie. Con un calcio qualcuno mi ha sbattuto sul lato della strada.
-Mia madre soffriva della sindrome dei fratelli Collyer, o disposofia. È morta portandosi dietro nient'altro che il suo corpo. In attesa di risorgere dovrà mettersi a posto i capelli, magari stirare la gonna e la camicetta. Chi lo sa, forse entropia e aldilà non sono antinomici.
-Ogni sera torno a casa con dell'altra legna. La metto nel capanno. Il mattino dopo non ce n'è quasi più. 
-Va avanti così da anni la mia vita. 
-Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompare. Anche la tristezza.</p>
-            <a href="https://www.marcosayaedizioni.net/copia-di-tra-lampi-e-corti-3" target="_blank" rel="noopener">Maggiori dettagli</a> | 
-            <a href="https://www.amazon.it/Unultima-prima-partire-Guido-Turco/dp/8898243839/ref=sr_1_fkmr0_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=39API6RZXLVYV&dib=eyJ2IjoiMSJ9.by0JUrl5nAAyYDDSvHLt-lE6hne0iufzKDIAUmid6LgL9zbaIIdYYWzD4p71daxEBLg6VBduDsu-J4vx-bfVww6QdiQoMjIjFJeYr0oksK8.VGn974_JUznB9JuXor2i9x-2AuOqV5MuScLZphQ7C7A&dib_tag=se&keywords=guido+turco+marco+saya&qid=1715712700&sprefix=guido+turco+marco+saya%2Caps%2C89&sr=8-1-fkmr0" target="_blank" rel="noopener">Acquista</a> | 
-            <a href="https://www.almapoesia.it/post/ma-alle-ore-succedono-le-cose-recensione-a-un-ultima-cosa-prima-di-partire-di-guido-turco" target="_blank" rel="noopener">Recensioni</a>
-        </li>
-    </ul>
+        <h2>Ultime Pubblicazioni</h2>
+        <ul>
+            <li>
+                <h3>Arno e Altre Figure - 2024</h3>
+                <p>Essere non è essere quello che si è, ma quello che si vorrebbe essere.<br>Che cosa potrà mai significare svegliarsi, radersi, vestirsi, fare colazione, lavarsi i denti e profumarsi, indossare giacca e berretto, fare tutto questo per servire un'immagine di sé che non si riconosce?<br>Arno non ci pensa nemmeno più, a tutte le biografie che si è inventato. Ci si trova benissimo. Lungo le giornate, e a momenti alterni, non fa nessuno sforzo per interpretarle una dopo l'altra, una insieme all'altra. Quelle biografie sono le sue, sono lui, Arno.<br>La maggior parte degli uomini crede a tutto, evita le fatiche dell'indagine e quelle, ben più gravose, dell'acribia. Alcuni affermano che la verità non esiste, o che non si può dire.<br>Arno ha un modo diverso di considerare le cose. Tutto si può dire, anche la verità. Anzi, soprattutto la verità. È vero, a volte si nasconde, traccia percorsi inconsueti, segue un lunario particolare e non si sa se sarà l'umido ovvero il secco che la farà venire fuori. Arno la verità non la cerca, la inventa. Se quella si fa trovare, tanto meglio, altrimenti lo sforzo è solo suo, quello di fabbricare <em>ex novo</em> uno scaffale di verità, nuove sedie di verità, una biblioteca ben fornita, un archivio pieno di raccoglitori di verità, album fotografici di verità, cantine, ripostigli e soffitte piene di verità. Di molte verità, di tutte le verità che gli servono per continuare a vivere.</p>
+                <p>
+                    <a href="https://www.scalpendi.eu/catalogo/assemblaggi-e-sdoppiamenti/arno-e-altre-figure/" target="_blank" rel="noopener">Maggiori dettagli</a>
+                    <a href="https://www.amazon.it/Arno-altre-figure-Guido-Turco/dp/B0CB77KZBZ" target="_blank" rel="noopener">Acquista</a>
+                </p>
+            </li>
+            <li>
+                <h3>Un'Ultima Cosa Prima di Partire - 2019</h3>
+                <p>Sono un frutto caduto dall'albero genealogico. Gli altri stanno là in alto, attaccati ai rami, io sto per terra, in mezzo all'erba e alle foglie. Con un calcio qualcuno mi ha sbattuto sul lato della strada. Mia madre soffriva della sindrome dei fratelli Collyer, o disposofia. È morta portandosi dietro nient'altro che il suo corpo. In attesa di risorgere dovrà mettersi a posto i capelli, magari stirare la gonna e la camicetta. Chi lo sa, forse entropia e aldilà non sono antinomici. Ogni sera torno a casa con dell'altra legna. La metto nel capanno. Il mattino dopo non ce n'è quasi più. Va avanti così da anni la mia vita. Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompare. Anche la tristezza.</p>
+                <p>
+                    <a href="https://www.marcosayaedizioni.net/copia-di-tra-lampi-e-corti-3" target="_blank" rel="noopener">Maggiori dettagli</a>
+                    <a href="https://www.amazon.it/Unultima-prima-partire-Guido-Turco/dp/8898243839" target="_blank" rel="noopener">Acquista</a>
+                    <a href="https://www.almapoesia.it/post/ma-alle-ore-succedono-le-cose-recensione-a-un-ultima-cosa-prima-di-partire-di-guido-turco" target="_blank" rel="noopener">Recensione</a>
+                </p>
+            </li>
+        </ul>
     </section>
 
     <section id="inediti">
-    <h2>Inediti</h2>
-    <p class="section-description">Scritture che non hanno ancora trovato casa, o forse l'hanno persa.<br>
-    <span style="font-size:0.85em; color:#999;">I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni — e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.</span></p>
-    <div id="archive-inediti"></div>
-    <div id="content-inediti"></div>
+        <h2>Inediti</h2>
+        <p class="section-description">Scritture che non hanno ancora trovato casa, o forse l'hanno persa.</p>
+        <span style="font-size:0.85em; color:#999;">
+            I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.
+        </span>
+        <div id="archive-inediti" class="archive-inediti"></div>
+        <div id="content-inediti" class="content-inediti"></div>
     </section>
 
     <section id="tribuna">
-    <h2>Tribuna Critica</h2>
-    <p class="section-description">Critica poetica formale e militante secondo i principi della Tribuna Critica. Analisi di poesie applicando il Manifesto e il Canone Critico elaborati dall'autore.<br>
-    <span style="font-size:0.85em; color:#999;">I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni — e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.</span></p>
-    <div id="archive-tribuna"></div>
-    <div id="content-tribuna"></div>
+        <h2>Tribuna Critica</h2>
+        <p class="section-description">Critica poetica formale e militante secondo i principi della Tribuna Critica. Analisi di poesie applicando il Manifesto e il Canone Critico elaborati dall'autore.</p>
+        <span style="font-size:0.85em; color:#999;">
+            I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.
+        </span>
+        <div id="archive-tribuna" class="archive-tribuna"></div>
+        <div id="content-tribuna" class="content-tribuna"></div>
     </section>
 
     <section id="disiecta">
-    <h2>Disiecta Membra</h2>
-    <p class="section-description">Frammenti, schegge, cose che non stanno insieme — eppure.<br>
-    <span style="font-size:0.85em; color:#999;">I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni — e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.</span></p>
-    <div id="archive-disiecta"></div>
-    <div id="content-disiecta"></div>
+        <h2>Disiecta Membra</h2>
+        <p class="section-description">Frammenti, schegge, cose che non stanno insieme — eppure.</p>
+        <span style="font-size:0.85em; color:#999;">
+            I contenuti sono protetti. Per richiedere una copia, usa il <a href="#contatti" style="color:#888;">modulo Contatti</a> indicando le ragioni e magari <a href="#donation" style="color:#888;">offrimi un caffè</a>.
+        </span>
+        <div id="archive-disiecta" class="archive-disiecta"></div>
+        <div id="content-disiecta" class="content-disiecta"></div>
     </section>
-    
+
     <section id="rete">
-    <h2>Pubblicazioni in Rete</h2>
-    <ul>
-        <li><a href="https://www.poesiaallachiarafonte.ch/Fluire-14-Guido-Turco/" target="_blank" rel="noopener">Alla Chiara Fonte - 2024/03</a></li>
-        <li><a href="https://poesiaultracontemporanea.wordpress.com/2025/10/08/guido-turco-testamento/" target="_blank" rel="noopener">Poesia Ultracontemporanea - 2024/03</a></li>
-        <li><a href="https://poesiaultracontemporanea.wordpress.com/2024/03/06/guido-turco-i-cieli-di-milano/" target="_blank" rel="noopener">Poesia Ultracontemporanea - 2024/03</a></li>
-        <li><a href="https://blog.versanteripido.it/osservatorio-poetico-di-sonia-caporossi-guido-turco/" target="_blank" rel="noopener">Versante Ripido - Osservatorio Poetico - 2023/01</a></li>
-        <li><a href="https://imperfettaellisse.it/archives/2691#more-2691" target="_blank" rel="noopener">Imperfetta Ellisse - 2022/06</a></li>
-        <li><a href="https://www.poesiadelnostrotempo.it/laboratorio-di-poesia-maria-rosaria-teni-guido-turco-e-yael-merlini/" target="_blank" rel="noopener">Poesia del Nostro Tempo - 2022/03</a></li>
-        <li>... e altri ce ne sarebbero...</li>
-    </ul>
+        <h2>Pubblicazioni in Rete</h2>
+        <ul>
+            <li><a href="https://www.poesiaallachiarafonte.ch/fluire-14-guido-turco/" target="_blank" rel="noopener">Alla Chiara Fonte - 202403</a></li>
+            <li><a href="https://poesiaultracontemporanea.wordpress.com/2025/10/08/guido-turco-testamento/" target="_blank" rel="noopener">Poesia Ultracontemporanea - 202503</a></li>
+            <li><a href="https://poesiaultracontemporanea.wordpress.com/2024/03/06/guido-turco-i-cieli-di-milano/" target="_blank" rel="noopener">Poesia Ultracontemporanea - 202403</a></li>
+            <li><a href="https://blog.versanteripido.it/osservatorio-poetico-di-sonia-caporossi-guido-turco/" target="_blank" rel="noopener">Versante Ripido - Osservatorio Poetico - 202301</a></li>
+            <li><a href="https://imperfettaellisse.it/archives/2691/more-2691/" target="_blank" rel="noopener">Imperfetta Ellisse - 202206</a></li>
+            <li><a href="https://www.poesiadelnostrotempo.it/laboratorio-di-poesia-maria-rosaria-teni-guido-turco-e-yael-merlini/" target="_blank" rel="noopener">Poesia del Nostro Tempo - 202203</a></li>
+            <!-- e altri ce ne sarebbero... -->
+        </ul>
     </section>
 
     <div class="donation" id="donation">
-    <p>Se ti va di offrirmi un caffè virtuale…</p>
-    <p><a href="https://ko-fi.com/gt368487" target="_blank" rel="noopener" style="display:inline-block; padding:12px 24px; background:#2e4a6b; color:white; text-decoration:none; border-radius:6px; font-weight:bold;">☕ Offri un caffè</a></p>
+        <p>Se ti va di offrirmi un caffè virtuale…</p>
+        <a href="https://ko-fi.com/gt368487" target="_blank" rel="noopener" style="display:inline-block; padding:12px 24px; background:#2e4a6b; color:white; text-decoration:none; border-radius:6px; font-weight:bold;">Offri un caffè</a>
     </div>
 
     <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Se vuoi scrivermi, lascia un messaggio.</p>
-    
-    <form action="https://formspree.io/f/maqwabzw" method="POST" style="max-width: 600px; margin: 0 auto;">
-        <label for="name">Nome (facoltativo):</label><br>
-        <input type="text" id="name" name="name" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px;"><br>
-        
-        <label for="email">La tua email *:</label><br>
-        <input type="email" id="email" name="_replyto" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px;"><br>
-        
-        <label for="message">Messaggio *:</label><br>
-        <textarea id="message" name="message" required rows="6" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px; font-family: Helvetica, sans-serif;"></textarea><br>
-        
-        <button type="submit" style="padding:12px 24px; background:#333; color:white; border:none; border-radius:4px; cursor:pointer; font-size:1em;">Invia messaggio</button>
-    </form>
+        <h2>Contatti</h2>
+        <p>Se vuoi scrivermi, lascia un messaggio.</p>
+        <form action="https://formspree.io/f/maqwabzw" method="POST" style="max-width: 600px; margin: 0 auto;">
+            <label for="name">Nome (facoltativo)</label><br>
+            <input type="text" id="name" name="name" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px;"><br>
+            <label for="email">La tua email</label><br>
+            <input type="email" id="email" name="replyto" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px;"><br>
+            <label for="message">Messaggio</label><br>
+            <textarea id="message" name="message" required rows="6" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px; font-family: Helvetica, sans-serif;"></textarea><br>
+            <button type="submit" style="padding:12px 24px; background:#333; color:white; border:none; border-radius:4px; cursor:pointer; font-size:1em;">Invia messaggio</button>
+        </form>
     </section>
-    
+
     <footer>
-    <p>Contatti: usa il <a href="#contatti">form qui sopra</a></p>
-    <p>Non seguirmi sui social: non sono da nessuna parte… insomma, qui un po' ci sono.</p>
-    <p>&copy; 2025 Guido Turco. Tutti i diritti riservati.</p>
+        <p>Contatti: usa il <a href="#contatti">form qui sopra</a></p>
+        <p>Non seguirmi sui social, non sono da nessuna parte (insomma, qui un po' ci sono).</p>
+        <p>&copy; 2025 Guido Turco. Tutti i diritti riservati.</p>
     </footer>
 
     <script>
-    async function loadData(url) {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('File non trovato');
-            return await response.json();
-        } catch (error) {
-            console.error('Errore caricamento ' + url, error);
-            return [];
-        }
-    }
-
-    // Genera lo slug dal campo date (es. "23 dicembre 2025" → "23-dicembre-2025")
-    function makeSlug(dateStr) {
-        return dateStr.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    }
-
-    // Genera l'archivio laterale (max 10 + link "Vedi tutto")
-    function generateArchive(sectionId, posts, archiveTitle, folder) {
-        const sidebar = document.getElementById(`archive-${sectionId}`);
-        if (!sidebar) return;
-
-        if (posts.length === 0) {
-            sidebar.innerHTML = `<p style="font-style:italic; color:#777;">Nessun contenuto ancora disponibile.</p>`;
-            return;
+        async function loadData(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('File non trovato');
+                return await response.json();
+            } catch (error) {
+                console.error('Errore caricamento', url, error);
+                return [];
+            }
         }
 
-        const maxVisible = 10;
-        const visiblePosts = posts.slice(0, maxVisible);
-        
-        let html = `<h3>${archiveTitle}</h3><ul style="font-size:0.9em; line-height:1.7; padding-left:20px; list-style:none; margin:0;">`;
-        
-        visiblePosts.forEach(post => {
-            const slug = makeSlug(post.date);
-            const filename = `${folder}/${slug}.html`;
-            html += `<li style="margin-bottom:8px;"><a href="${filename}" target="_blank" rel="noopener">${post.date} – ${post.title}</a></li>`;
-        });
-        
-        html += '</ul>';
-
-        // Se più di 10, aggiungi link "Vedi tutto l'archivio"
-        if (posts.length > maxVisible) {
-            html += `<p style="margin-top:15px; font-size:0.85em;"><a href="${folder}/archivio.html" target="_blank" rel="noopener">Vedi tutto l'archivio (${posts.length})</a></p>`;
+        // Genera lo slug dal campo date es. "23 dicembre 2025" → "23-dicembre-2025"
+        function makeSlug(dateStr) {
+            return dateStr.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
         }
 
-        sidebar.innerHTML = html;
-    }
+        // Genera l'archivio laterale (max 10 link + "Vedi tutto")
+        function generateArchive(sectionId, posts, archiveTitle, folder) {
+            const sidebar = document.getElementById('archive-' + sectionId);
+            if (!sidebar) return;
 
-    // Genera il contenuto principale (anteprima dell'ultimo post)
-    function generateContent(sectionId, posts, folder) {
-        const content = document.getElementById(`content-${sectionId}`);
-        if (!content) return;
+            if (posts.length === 0) {
+                sidebar.innerHTML = '<p style="font-style:italic; color:#777;">Nessun contenuto ancora disponibile.</p>';
+                return;
+            }
 
-        if (posts.length === 0) {
-            content.innerHTML = '';
-            return;
+            const maxVisible = 10;
+            const visiblePosts = posts.slice(0, maxVisible);
+            let html = `<h3>${archiveTitle}</h3><ul style="font-size:0.9em; line-height:1.7; padding-left:20px; list-style:none; margin:0;">`;
+            visiblePosts.forEach(post => {
+                const slug = makeSlug(post.date);
+                const filename = folder + '/' + slug + '.html';
+                html += `<li style="margin-bottom:8px;"><a href="${filename}" target="_blank" rel="noopener">${post.date} ${post.title}</a></li>`;
+            });
+            html += '</ul>';
+
+            // Se più di 10, aggiungi link "Vedi tutto l'archivio"
+            if (posts.length > maxVisible) {
+                html += `<p style="margin-top:15px; font-size:0.85em;"><a href="${folder}/archivio.html" target="_blank" rel="noopener">Vedi tutto l'archivio (${posts.length})</a></p>`;
+            }
+            sidebar.innerHTML = html;
         }
 
-        const latest = posts[0];
-        const slug = makeSlug(latest.date);
-        const filename = `${folder}/${slug}.html`;
+        // Genera il contenuto principale (anteprima dell'ultimo post)
+        function generateContent(sectionId, posts, folder) {
+            const content = document.getElementById('content-' + sectionId);
+            if (!content) return;
 
-        content.innerHTML = `
-            <div class="latest-post">
-                <p class="post-date">${latest.date}</p>
-                <h3 style="margin-top:0; margin-bottom:15px;">${latest.title}</h3>
-                <p><a href="${filename}" target="_blank" rel="noopener">Leggi tutto →</a></p>
-            </div>
-        `;
-    }
+            if (posts.length === 0) {
+                content.innerHTML = '';
+                content.classList.add('empty');
+                return;
+            }
 
-    async function init() {
-        const tribuna = await loadData('data/tribuna.json');
-        const inediti = await loadData('data/inediti.json');
-        const disiecta = await loadData('data/disiecta.json');
+            const latest = posts[0];
+            const slug = makeSlug(latest.date);
+            const filename = folder + '/' + slug + '.html';
+            content.innerHTML = `
+                <div class="latest-post">
+                    <p class="post-date">${latest.date}</p>
+                    <h3 style="margin-top:0; margin-bottom:15px;">${latest.title}</h3>
+                    <p>${latest.excerpt || 'Anteprima non disponibile.'}</p>
+                    <p><a href="${filename}" target="_blank" rel="noopener">Leggi tutto →</a></p>
+                </div>
+            `;
+            content.classList.remove('empty');
+        }
 
-        // Tribuna Critica
-        generateArchive('tribuna', tribuna, 'Archivio', 'recensioni');
-        generateContent('tribuna', tribuna, 'recensioni');
+        // Init
+        async function init() {
+            const tribuna = await loadData('data/tribuna.json');
+            const inediti = await loadData('data/inediti.json');
+            const disiecta = await loadData('data/disiecta.json');
 
-        // Inediti
-        generateArchive('inediti', inediti, 'Archivio', 'inediti');
-        generateContent('inediti', inediti, 'inediti');
+            // Tribuna Critica
+            generateArchive('tribuna', tribuna, 'Archivio', 'recensioni');
+            generateContent('tribuna', tribuna, 'recensioni');
 
-        // Disiecta Membra
-        generateArchive('disiecta', disiecta, 'Archivio', 'disiecta');
-        generateContent('disiecta', disiecta, 'disiecta');
-    }
+            // Inediti
+            generateArchive('inediti', inediti, 'Archivio', 'inediti');
+            generateContent('inediti', inediti, 'inediti');
 
-    window.onload = init;
+            // Disiecta Membra
+            generateArchive('disiecta', disiecta, 'Archivio', 'disiecta');
+            generateContent('disiecta', disiecta, 'disiecta');
+        }
+        window.onload = init;
     </script>
 </body>
 </html>
