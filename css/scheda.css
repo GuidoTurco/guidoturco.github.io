@@ -65,6 +65,23 @@ hr {
     text-decoration: underline;
 }
 
+.giudizio-title {
+    text-align: center;
+}
+
+.voto {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #800;
+}
+
+.lapidario {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .scheda {
@@ -75,4 +92,3 @@ hr {
         font-size: 1.6em;
     }
 }
-
