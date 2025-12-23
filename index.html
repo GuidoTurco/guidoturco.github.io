@@ -283,20 +283,20 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     // Rimuoviamo generateContent per la tribuna: non vogliamo il testo lungo qui
     // (le altre sezioni possono tenere il contenuto inline se vuoi)
 
-    async function init() {
+        async function init() {
         const tribuna = await loadData('data/tribuna.json');
         const inediti = await loadData('data/inediti.json');
         const parole = await loadData('data/parole.json');
 
+        // Solo archivio per la Tribuna Critica (niente contenuto lungo)
         generateArchive('tribuna', tribuna, 'Archivio Tribuna Critica');
-        // Solo archivio per tribuna, niente contenuto lungo
 
-        // Per Inediti e Parole, se vuoi tenere il contenuto inline:
+        // Per Inediti e Parole (se vuoi tenere il contenuto inline)
         generateArchive('inediti', inediti, 'Archivio Inediti');
-        generateContent('inediti', inediti);  // opzionale
+        generateContent('inediti', inediti);
 
         generateArchive('parole', parole, 'Archivio Note');
-        generateContent('parole', parole);    // opzionale
+        generateContent('parole', parole);
     }
 
     window.onload = init;
