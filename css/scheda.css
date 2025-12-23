@@ -1,1 +1,78 @@
+/* scheda.css - Stile comune per le schede critiche */
+
+body {
+    background: #f8f0e0;
+    color: #333;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.8;
+}
+
+.scheda {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fffff5;
+    padding: 60px 80px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border: 1px solid #e0dcc0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #5a3f11;
+}
+
+.data {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+.meta {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #444;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 50px 0;
+}
+
+.torna {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 1.1em;
+}
+
+.torna a {
+    color: #5a3f11;
+    text-decoration: none;
+}
+
+.torna a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .scheda {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+}
 
