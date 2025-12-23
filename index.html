@@ -148,40 +148,29 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
             <a href="https://www.almapoesia.it/post/ma-alle-ore-succedono-le-cose-recensione-a-un-ultima-cosa-prima-di-partire-di-guido-turco" target="_blank" rel="noopener">Recensioni</a>
         </li>
     </ul>
-</section>
+
+    </section>
 
     <section id="inediti">
-        <h2>Inediti</h2>
-        <p>Testi inediti...</p>
+    <h2>Inediti</h2>
+    <div id="archive-inediti"></div> <!-- Sidebar archivio -->
+    <div id="content-inediti"></div> <!-- Contenuti generati -->
+
     </section>
 
-    <section id="tribuna">
-        <h2>Tribuna Critica</h2>
-        <p>Recensioni quotidiane di poesie, schede, appunti critici.</p>
-        
-        <!-- Esempio di scheda quotidiana – duplicare per ogni nuovo post -->
-        <div class="post">
-            <p class="post-date">23 dicembre 2025</p>
-            <h3>Titolo della poesia o del libro recensito</h3>
-            <p>Il testo della tua recensione, citazioni, riflessioni…<br>
-               Eventuali immagini: <img src="images/recensione1.jpg" style="max-width:100%; height:auto; margin:20px 0; border-radius:8px;"></p>
-        </div>
-        
-        <div class="post">
-            <p class="post-date">22 dicembre 2025</p>
-            <h3>Altro titolo</h3>
-            <p>...</p>
-        </div>
-        
-        <!-- Aggiungi nuove schede in cima, così le più recenti stanno sopra -->
-    </section>
+<section id="tribuna">
+    <h2>Tribuna Critica</h2>
+    <div id="archive-tribuna"></div>
+    <div id="content-tribuna"></div>
 
-    <section id="parole">
-        <h2>Le parole e le cose</h2>
-        <p>Note sparse, frammenti, immagini, pose e contro-pose.</p>
-        <!-- Qui metti testi brevi, citazioni, foto, pensieri veloci -->
-    </section>
+</section>
 
+<section id="parole">
+    <h2>Le parole e le cose</h2> <!-- o "Le parole e le pose" se preferisci -->
+    <div id="archive-parole"></div>
+    <div id="content-parole"></div>
+</section>
+    
     <section id="rete">
     <h2>Pubblicazioni in Rete</h2>
     <ul>
@@ -226,5 +215,77 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     <p>&copy; 2025 Guido Turco. Tutti i diritti riservati.</p>
     </footer>
 
+    <script>
+    // === DATI DELLE TRE SEZIONI ===
+
+    const inediti = [
+        {
+            date: "23 dicembre 2025",
+            title: "Titolo del primo inedito",
+            content: "Il testo poetico completo...<br>Puoi aggiungere <em>corsivo</em>, immagini con <img src='images/inedito1.jpg' alt='...'>"
+        }
+        // Aggiungi nuovi inediti in cima
+    ];
+
+    const tribuna = [
+        {
+            date: "23 dicembre 2025",
+            title: "Prima recensione quotidiana",
+            content: "Testo critico, citazioni, riflessioni...<br><img src='images/recensione1.jpg' alt='...' style='max-width:100%; margin:20px 0;'>"
+        }
+        // Nuove recensioni in cima
+    ];
+
+    const parole = [
+        {
+            date: "23 dicembre 2025",
+            title: "Nota sparsa n.1",
+            content: "Frammento, citazione, pensiero breve...<br>Eventuale immagine o posa."
+        }
+        // Nuove note in cima
+    ];
+
+    // === FUNZIONI GENERICHE ===
+
+    function generateArchive(sectionId, posts) {
+        const sidebar = document.getElementById(`archive-${sectionId}`);
+        if (!sidebar || posts.length === 0) return;
+        let html = '<h3>Archivio</h3><ul style="font-size:0.9em; line-height:1.6;">';
+        posts.forEach((post, index) => {
+            html += `<li><a href="#${sectionId}-post-${index}">${post.date} – ${post.title}</a></li>`;
+        });
+        html += '</ul>';
+        sidebar.innerHTML = html;
+    }
+
+    function generateContent(sectionId, posts) {
+        const container = document.getElementById(`content-${sectionId}`);
+        if (!container) return;
+        let html = '';
+        posts.forEach((post, index) => {
+            html += `
+                <div class="post" id="${sectionId}-post-${index}">
+                    <p class="post-date">${post.date}</p>
+                    <h3>${post.title}</h3>
+                    <div class="post-content">${post.content}</div>
+                    <hr style="margin:40px 0; border:none; border-top:1px solid #eee;">
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // === AVVIO ===
+    window.onload = () => {
+        generateArchive('inediti', inediti);
+        generateContent('inediti', inediti);
+
+        generateArchive('tribuna', tribuna);
+        generateContent('tribuna', tribuna);
+
+        generateArchive('parole', parole);
+        generateContent('parole', parole);
+    };
+</script>
 </body>
 </html>
