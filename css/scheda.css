@@ -1,5 +1,13 @@
 /* scheda.css - Stile comune per le schede critiche */
 
+/* Protezione anti-copia */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body {
     background: #f8f0e0;
     color: #333;

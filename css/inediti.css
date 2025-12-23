@@ -1,0 +1,144 @@
+/* inediti.css - Stile per poesie, racconti, saggi */
+
+/* Protezione anti-copia */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background: #fafafa;
+    color: #222;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0;
+    padding: 50px 20px;
+    line-height: 1.8;
+}
+
+.inedito {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 60px 70px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.04);
+}
+
+.data {
+    font-size: 0.85em;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 50px 0;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Poesia */
+.poesia {
+    text-align: left;
+    margin: 40px 0;
+}
+
+.poesia p {
+    margin-bottom: 25px;
+    line-height: 2;
+}
+
+/* Prosa / Racconto */
+.prosa {
+    text-align: justify;
+    margin: 40px 0;
+}
+
+.prosa p {
+    text-indent: 1.5em;
+    margin-bottom: 20px;
+}
+
+.prosa p:first-child {
+    text-indent: 0;
+}
+
+.prosa p:first-child::first-letter {
+    font-size: 3em;
+    float: left;
+    line-height: 1;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* Saggio */
+.saggio {
+    text-align: justify;
+    margin: 40px 0;
+}
+
+.saggio .abstract {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.saggio h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    font-style: italic;
+    color: #555;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.saggio p {
+    margin-bottom: 20px;
+}
+
+/* Nota dell'autore */
+.nota-autore {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #777;
+}
+
+/* Torna */
+.torna {
+    margin-top: 70px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+.torna a {
+    color: #888;
+    text-decoration: none;
+}
+
+.torna a:hover {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .inedito {
+        padding: 40px 25px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+}
