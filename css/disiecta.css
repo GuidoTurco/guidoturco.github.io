@@ -1,11 +1,12 @@
 /* disiecta.css - Stile per frammenti, note, schegge */
 
-/* Protezione anti-copia */
+/* Protezione anti-copia rafforzata */
 body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-touch-callout: none;
 }
 
 body {
