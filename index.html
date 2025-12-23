@@ -253,7 +253,6 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     </footer>
 
    <script>
-    // Carica i dati da file JSON esterni nella cartella data/
     async function loadData(url) {
         try {
             const response = await fetch(url);
@@ -265,7 +264,6 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         }
     }
 
-    // Genera l'archivio laterale
     function generateArchive(sectionId, posts, archiveTitle) {
         const sidebar = document.getElementById(`archive-${sectionId}`);
         if (!sidebar || posts.length === 0) {
@@ -274,50 +272,31 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         }
         let html = `<h3>${archiveTitle}</h3><ul style="font-size:0.9em; line-height:1.7; padding-left:20px;">`;
         posts.forEach((post, index) => {
-            html += `<li><a href="#${sectionId}-post-${index}">${post.date} – ${post.title}</a></li>`;
+            const slug = post.date.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+            const filename = `recensioni/${slug}.html`;
+            html += `<li><a href="${filename}" target="_blank" rel="noopener">${post.date} – ${post.title}</a></li>`;
         });
         html += '</ul>';
         sidebar.innerHTML = html;
     }
 
-    // Genera i contenuti
-    function generateContent(sectionId, posts) {
-        const container = document.getElementById(`content-${sectionId}`);
-        if (!container) return;
+    // Rimuoviamo generateContent per la tribuna: non vogliamo il testo lungo qui
+    // (le altre sezioni possono tenere il contenuto inline se vuoi)
 
-        if (posts.length === 0) {
-            container.innerHTML = `<p style="font-style:italic; color:#777;">Presto qui appariranno i primi contenuti.</p>`;
-            return;
-        }
-
-        let html = '';
-        posts.forEach((post, index) => {
-            html += `
-                <div class="post" id="${sectionId}-post-${index}">
-                    <p class="post-date">${post.date}</p>
-                    <h3>${post.title}</h3>
-                    <div class="post-content">${post.content}</div>
-                    <hr style="margin:50px 0 40px; border:none; border-top:1px solid #eee;">
-                </div>
-            `;
-        });
-        container.innerHTML = html;
-    }
-
-    // Avvio: carica i tre JSON e genera tutto
     async function init() {
         const tribuna = await loadData('data/tribuna.json');
         const inediti = await loadData('data/inediti.json');
-        const parole = await loadData('data/parola.json');  // nota: parola.json (singolare)
+        const parole = await loadData('data/parole.json');
 
         generateArchive('tribuna', tribuna, 'Archivio Tribuna Critica');
-        generateContent('tribuna', tribuna);
+        // Solo archivio per tribuna, niente contenuto lungo
 
+        // Per Inediti e Parole, se vuoi tenere il contenuto inline:
         generateArchive('inediti', inediti, 'Archivio Inediti');
-        generateContent('inediti', inediti);
+        generateContent('inediti', inediti);  // opzionale
 
         generateArchive('parole', parole, 'Archivio Note');
-        generateContent('parole', parole);
+        generateContent('parole', parole);    // opzionale
     }
 
     window.onload = init;
