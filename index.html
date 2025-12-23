@@ -253,37 +253,19 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     </footer>
 
    <script>
-    // === DATI DELLE TRE SEZIONI ===
+    // Carica i dati da file JSON esterni nella cartella data/
+    async function loadData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('File non trovato');
+            return await response.json();
+        } catch (error) {
+            console.error('Errore caricamento ' + url, error);
+            return [];
+        }
+    }
 
-    const inediti = [
-        // Aggiungi nuovi inediti in cima
-        // {
-        //     date: "23 dicembre 2025",
-        //     title: "Titolo inedito",
-        //     content: "Testo poetico...<br><em>corsivo</em>, immagini con <img src='images/nome.jpg' alt='descrizione'>"
-        // }
-    ];
-
-    const tribuna = [
-        // Aggiungi nuove recensioni quotidiane in cima
-        // {
-        //     date: "23 dicembre 2025",
-        //     title: "Titolo recensione",
-        //     content: "Testo critico, citazioni...<br><img src='images/recensione.jpg' alt='...' style='max-width:100%; margin:20px 0;'>"
-        // }
-    ];
-
-    const parole = [
-        // Aggiungi nuove note in cima
-        // {
-        //     date: "23 dicembre 2025",
-        //     title: "Nota o frammento",
-        //     content: "Pensiero breve, citazione, immagine...<br>Qualsiasi formato libero."
-        // }
-    ];
-
-    // === FUNZIONI PER ARCHIVIO E CONTENUTO ===
-
+    // Genera l'archivio laterale
     function generateArchive(sectionId, posts, archiveTitle) {
         const sidebar = document.getElementById(`archive-${sectionId}`);
         if (!sidebar || posts.length === 0) {
@@ -298,6 +280,7 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         sidebar.innerHTML = html;
     }
 
+    // Genera i contenuti
     function generateContent(sectionId, posts) {
         const container = document.getElementById(`content-${sectionId}`);
         if (!container) return;
@@ -321,18 +304,23 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         container.innerHTML = html;
     }
 
-    // === AVVIO AL CARICAMENTO PAGINA ===
-    window.onload = () => {
-        generateArchive('inediti', inediti, 'Archivio Inediti');
-        generateContent('inediti', inediti);
+    // Avvio: carica i tre JSON e genera tutto
+    async function init() {
+        const tribuna = await loadData('data/tribuna.json');
+        const inediti = await loadData('data/inediti.json');
+        const parole = await loadData('data/parola.json');  // nota: parola.json (singolare)
 
         generateArchive('tribuna', tribuna, 'Archivio Tribuna Critica');
         generateContent('tribuna', tribuna);
 
+        generateArchive('inediti', inediti, 'Archivio Inediti');
+        generateContent('inediti', inediti);
+
         generateArchive('parole', parole, 'Archivio Note');
         generateContent('parole', parole);
-    };
-</script>
+    }
+
+    window.onload = init;
 </script>
 </body>
 </html>
