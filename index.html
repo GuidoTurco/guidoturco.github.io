@@ -436,6 +436,7 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     <p>Contatti: usa il <a href="#contatti">form qui sopra</a></p>
     <p>Non seguirmi sui social: non sono da nessuna parte… insomma, qui un po' ci sono.</p>
     <p>&copy; 2025 Guido Turco. Tutti i diritti riservati.</p>
+    <p style="margin-top:15px; font-size:0.85em; color:#888;">Visite: <a href="https://guidoturco.goatcounter.com" target="_blank" rel="noopener" style="color:#888;"><span id="goatcounter-total"></span></a></p>
     </footer>
 
     <script>
@@ -629,6 +630,18 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     // Chiudi modale con ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeModal();
+    });
+    </script>
+
+    <!-- GoatCounter analytics -->
+    <script data-goatcounter="https://guidoturco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    
+    <!-- Contatore pubblico -->
+    <script>
+    fetch('https://guidoturco.goatcounter.com/counter/?p=/').then(r => r.text()).then(count => {
+        document.getElementById('goatcounter-total').textContent = count;
+    }).catch(() => {
+        document.getElementById('goatcounter-total').textContent = '—';
     });
     </script>
 </body>
