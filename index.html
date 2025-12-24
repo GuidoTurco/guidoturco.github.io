@@ -164,9 +164,124 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 8px;
         }
+
+        /* Sidebar fissa autori */
+        #authors-cloud {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            width: 180px;
+            padding: 15px;
+            background: #fafafa;
+            border-left: 2px solid #eee;
+            font-size: 0.85em;
+            line-height: 1.9;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+            z-index: 100;
+        }
+        #authors-cloud h4 {
+            font-size: 0.95em;
+            margin: 0 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+        #authors-cloud .cloud-content {
+            text-align: left;
+        }
+        #authors-cloud .cloud-content a {
+            display: inline;
+            margin-right: 8px;
+            color: #444;
+            text-decoration: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        #authors-cloud .cloud-content a:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+        @media (max-width: 1100px) {
+            #authors-cloud { display: none; }
+        }
+
+        /* Modale */
+        #author-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        #author-modal.visible {
+            display: flex;
+        }
+        #author-modal .modal-content {
+            background: white;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 4px;
+            position: relative;
+        }
+        #author-modal .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #999;
+        }
+        #author-modal .modal-close:hover {
+            color: #333;
+        }
+        #author-modal h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        #author-modal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #author-modal ul li {
+            margin-bottom: 12px;
+        }
+        #author-modal ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        #author-modal ul li a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Sidebar autori Tribuna -->
+    <div id="authors-cloud">
+        <h4>Autori in Tribuna</h4>
+        <div class="cloud-content" id="cloud-content"></div>
+    </div>
+
+    <!-- Modale per schede autore -->
+    <div id="author-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 id="modal-author-name"></h3>
+            <ul id="modal-schede-list"></ul>
+        </div>
+    </div>
 
     <header id="top">
         <h1>Notariqon</h1>
@@ -418,6 +533,7 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         // Tribuna Critica
         generateArchive('tribuna', tribuna, 'Archivio', 'recensioni');
         generateContent('tribuna', tribuna, 'recensioni');
+        generateAuthorsCloud(tribuna);
 
         // Inediti
         generateArchive('inediti', inediti, 'Archivio', 'inediti');
@@ -429,6 +545,91 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     }
 
     window.onload = init;
+
+    // === WORD CLOUD AUTORI ===
+    let tribunaData = [];
+
+    function generateAuthorsCloud(posts) {
+        tribunaData = posts;
+        const cloudContainer = document.getElementById('cloud-content');
+        if (!cloudContainer || posts.length === 0) {
+            if (cloudContainer) cloudContainer.innerHTML = '<em style="color:#999;">Nessun autore</em>';
+            return;
+        }
+
+        // Conta occorrenze per autore
+        const authorCounts = {};
+        posts.forEach(post => {
+            if (post.author) {
+                authorCounts[post.author] = (authorCounts[post.author] || 0) + 1;
+            }
+        });
+
+        const authors = Object.keys(authorCounts);
+        if (authors.length === 0) {
+            cloudContainer.innerHTML = '<em style="color:#999;">Nessun autore</em>';
+            return;
+        }
+
+        // Calcola min e max per scalare font-size
+        const counts = Object.values(authorCounts);
+        const minCount = Math.min(...counts);
+        const maxCount = Math.max(...counts);
+        
+        // Font-size da 0.8em a 1.5em
+        const minFont = 0.8;
+        const maxFont = 1.5;
+
+        // Ordina alfabeticamente
+        authors.sort((a, b) => a.localeCompare(b, 'it'));
+
+        let html = '';
+        authors.forEach(author => {
+            const count = authorCounts[author];
+            let fontSize = minFont;
+            if (maxCount > minCount) {
+                fontSize = minFont + ((count - minCount) / (maxCount - minCount)) * (maxFont - minFont);
+            }
+            html += `<a style="font-size:${fontSize.toFixed(2)}em;" onclick="openAuthorModal('${author.replace(/'/g, "\\'")}')">${author}</a> `;
+        });
+
+        cloudContainer.innerHTML = html;
+    }
+
+    function openAuthorModal(authorName) {
+        const modal = document.getElementById('author-modal');
+        const titleEl = document.getElementById('modal-author-name');
+        const listEl = document.getElementById('modal-schede-list');
+
+        titleEl.textContent = authorName;
+
+        // Filtra schede di questo autore
+        const schede = tribunaData.filter(p => p.author === authorName);
+        
+        let html = '';
+        schede.forEach(scheda => {
+            const slug = makeSlug(scheda.date);
+            const filename = `recensioni/${slug}.html`;
+            html += `<li><a href="${filename}" target="_blank" rel="noopener">${scheda.date} – <em>${scheda.title}</em></a></li>`;
+        });
+
+        listEl.innerHTML = html;
+        modal.classList.add('visible');
+    }
+
+    function closeModal() {
+        document.getElementById('author-modal').classList.remove('visible');
+    }
+
+    // Chiudi modale cliccando fuori
+    document.getElementById('author-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Chiudi modale con ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
     </script>
 </body>
 </html>
