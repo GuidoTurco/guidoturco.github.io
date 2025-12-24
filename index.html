@@ -638,10 +638,24 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     
     <!-- Contatore pubblico -->
     <script>
-    fetch('https://guidoturco.goatcounter.com/counter/?p=/').then(r => r.text()).then(count => {
-        document.getElementById('goatcounter-total').textContent = count;
-    }).catch(() => {
-        document.getElementById('goatcounter-total').textContent = '—';
+    window.goatcounter = window.goatcounter || {};
+    window.goatcounter.visit_count_callback = function(result) {
+        var total = 0;
+        for (var p in result) {
+            if (result.hasOwnProperty(p)) {
+                total += result[p];
+            }
+        }
+        document.getElementById("goatcounter-total").textContent = total || "0";
+    };
+
+    window.addEventListener("load", function() {
+        var s = document.createElement("script");
+        s.src = "https://guidoturco.goatcounter.com/counter/.json";
+        s.onerror = function() {
+            document.getElementById("goatcounter-total").textContent = "—";
+        };
+        document.body.appendChild(s);
     });
     </script>
 </body>
