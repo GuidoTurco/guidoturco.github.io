@@ -390,12 +390,24 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         const latest = posts[0];
         const slug = makeSlug(latest.date);
         const filename = `${folder}/${slug}.html`;
+        
+        // Testo del link in base alla sezione
+        let linkText = 'Leggi tutto →';
+        if (sectionId === 'tribuna') {
+            linkText = 'Leggi Scheda Critica →';
+        }
+        
+        // Mostra autore se presente (per Tribuna Critica)
+        const authorLine = latest.author 
+            ? `<p style="margin:0; color:#555;">${latest.author}</p>` 
+            : '';
 
         content.innerHTML = `
             <div class="latest-post">
                 <p class="post-date">${latest.date}</p>
-                <h3 style="margin-top:0; margin-bottom:15px;">${latest.title}</h3>
-                <p><a href="${filename}" target="_blank" rel="noopener">Leggi tutto →</a></p>
+                ${authorLine}
+                <h3 style="margin-top:5px; margin-bottom:15px;">${latest.title}</h3>
+                <p><a href="${filename}" target="_blank" rel="noopener">${linkText}</a></p>
             </div>
         `;
     }
