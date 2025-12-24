@@ -360,7 +360,11 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         visiblePosts.forEach(post => {
             const slug = makeSlug(post.date);
             const filename = `${folder}/${slug}.html`;
-            html += `<li style="margin-bottom:8px;"><a href="${filename}" target="_blank" rel="noopener">${post.date} – ${post.title}</a></li>`;
+            // Se c'è author, mostra "Autore (Titolo)", altrimenti solo titolo
+            const displayText = post.author 
+                ? `${post.author} (${post.title})`
+                : post.title;
+            html += `<li style="margin-bottom:8px;"><a href="${filename}" target="_blank" rel="noopener">${post.date} – ${displayText}</a></li>`;
         });
         
         html += '</ul>';
