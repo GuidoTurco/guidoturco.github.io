@@ -206,6 +206,67 @@
             #authors-cloud { display: none; }
         }
 
+        /* Box Ultimo pubblicato */
+        #ultimo-pubblicato {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 40px auto 50px auto;
+            padding: 20px;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-left: 3px solid #333;
+        }
+        #ultimo-pubblicato img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        #ultimo-pubblicato .ultimo-content {
+            flex: 1;
+        }
+        #ultimo-pubblicato .ultimo-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        #ultimo-pubblicato .ultimo-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: #222;
+        }
+        #ultimo-pubblicato .ultimo-author {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        #ultimo-pubblicato .ultimo-section {
+            font-size: 0.85em;
+            color: #666;
+        }
+        #ultimo-pubblicato .ultimo-section a {
+            color: #333;
+            text-decoration: none;
+        }
+        #ultimo-pubblicato .ultimo-section a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 500px) {
+            #ultimo-pubblicato {
+                flex-direction: column;
+                text-align: center;
+            }
+            #ultimo-pubblicato img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
         /* Modale */
         #author-modal {
             display: none;
@@ -298,6 +359,17 @@
     </header>
 
     <img src="images/image_two.png" alt="Arno" class="main-image">
+
+    <!-- Box Ultimo pubblicato -->
+    <div id="ultimo-pubblicato">
+        <img src="images/image_header.png" alt="">
+        <div class="ultimo-content">
+            <div class="ultimo-label">Ultimo pubblicato</div>
+            <div class="ultimo-title" id="ultimo-title">—</div>
+            <div class="ultimo-author" id="ultimo-author"></div>
+            <div class="ultimo-section" id="ultimo-section"></div>
+        </div>
+    </div>
 
     <section id="bio">
     <h2>Biografia</h2>
@@ -436,7 +508,6 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
     <p>Contatti: usa il <a href="#contatti">form qui sopra</a></p>
     <p>Non seguirmi sui social: non sono da nessuna parte… insomma, qui un po' ci sono.</p>
     <p>&copy; 2025 Guido Turco. Tutti i diritti riservati.</p>
-    <p style="margin-top:15px; font-size:0.85em; color:#888;">Visite: <span id="goatcounter-total"></span></p>
     </footer>
 
     <script>
@@ -543,6 +614,57 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         // Disiecta Membra
         generateArchive('disiecta', disiecta, 'Archivio', 'disiecta');
         generateContent('disiecta', disiecta, 'disiecta');
+
+        // Ultimo pubblicato
+        generateUltimoPubblicato(tribuna, inediti, disiecta);
+    }
+
+    // Converte data italiana in oggetto Date per confronto
+    function parseItalianDate(dateStr) {
+        const mesi = {
+            'gennaio': 0, 'febbraio': 1, 'marzo': 2, 'aprile': 3,
+            'maggio': 4, 'giugno': 5, 'luglio': 6, 'agosto': 7,
+            'settembre': 8, 'ottobre': 9, 'novembre': 10, 'dicembre': 11
+        };
+        const parts = dateStr.toLowerCase().split(' ');
+        if (parts.length === 3) {
+            const day = parseInt(parts[0]);
+            const month = mesi[parts[1]];
+            const year = parseInt(parts[2]);
+            if (!isNaN(day) && month !== undefined && !isNaN(year)) {
+                return new Date(year, month, day);
+            }
+        }
+        return new Date(0);
+    }
+
+    function generateUltimoPubblicato(tribuna, inediti, disiecta) {
+        // Raccogli tutti i post con la loro sezione
+        const allPosts = [];
+        
+        tribuna.forEach(p => allPosts.push({...p, sezione: 'Tribuna Critica', sezId: 'tribuna', folder: 'recensioni'}));
+        inediti.forEach(p => allPosts.push({...p, sezione: 'Inediti', sezId: 'inediti', folder: 'inediti'}));
+        disiecta.forEach(p => allPosts.push({...p, sezione: 'Via Babelia', sezId: 'disiecta', folder: 'disiecta'}));
+
+        if (allPosts.length === 0) return;
+
+        // Ordina per data decrescente
+        allPosts.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
+
+        const ultimo = allPosts[0];
+        const slug = makeSlug(ultimo.date);
+        const filename = `${ultimo.folder}/${slug}.html`;
+
+        document.getElementById('ultimo-title').textContent = ultimo.title;
+        
+        if (ultimo.author) {
+            document.getElementById('ultimo-author').textContent = ultimo.author;
+        } else {
+            document.getElementById('ultimo-author').style.display = 'none';
+        }
+
+        document.getElementById('ultimo-section').innerHTML = 
+            `${ultimo.date} in <a href="#${ultimo.sezId}">${ultimo.sezione}</a> · <a href="${filename}" target="_blank" rel="noopener">Leggi →</a>`;
     }
 
     window.onload = init;
@@ -635,28 +757,5 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
 
     <!-- GoatCounter analytics -->
     <script data-goatcounter="https://guidoturco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    
-    <!-- Contatore pubblico -->
-    <script>
-    window.goatcounter = window.goatcounter || {};
-    window.goatcounter.visit_count_callback = function(result) {
-        var total = 0;
-        for (var p in result) {
-            if (result.hasOwnProperty(p)) {
-                total += result[p];
-            }
-        }
-        document.getElementById("goatcounter-total").textContent = total || "0";
-    };
-
-    window.addEventListener("load", function() {
-        var s = document.createElement("script");
-        s.src = "https://guidoturco.goatcounter.com/counter/.json";
-        s.onerror = function() {
-            document.getElementById("goatcounter-total").textContent = "—";
-        };
-        document.body.appendChild(s);
-    });
-    </script>
 </body>
 </html>
