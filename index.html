@@ -527,6 +527,25 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         return dateStr.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
     }
 
+    // Converte data italiana in oggetto Date per confronto
+    function parseItalianDate(dateStr) {
+        const mesi = {
+            'gennaio': 0, 'febbraio': 1, 'marzo': 2, 'aprile': 3,
+            'maggio': 4, 'giugno': 5, 'luglio': 6, 'agosto': 7,
+            'settembre': 8, 'ottobre': 9, 'novembre': 10, 'dicembre': 11
+        };
+        const parts = dateStr.toLowerCase().split(' ');
+        if (parts.length === 3) {
+            const day = parseInt(parts[0]);
+            const month = mesi[parts[1]];
+            const year = parseInt(parts[2]);
+            if (!isNaN(day) && month !== undefined && !isNaN(year)) {
+                return new Date(year, month, day);
+            }
+        }
+        return new Date(0);
+    }
+
     // Genera l'archivio laterale (max 10 + link "Vedi tutto")
     function generateArchive(sectionId, posts, archiveTitle, folder) {
         const sidebar = document.getElementById(`archive-${sectionId}`);
@@ -537,8 +556,11 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
             return;
         }
 
+        // Ordina per data decrescente (più recenti prima)
+        const sortedPosts = [...posts].sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
+
         const maxVisible = 10;
-        const visiblePosts = posts.slice(0, maxVisible);
+        const visiblePosts = sortedPosts.slice(0, maxVisible);
         
         let html = `<h3>${archiveTitle}</h3><ul style="font-size:0.9em; line-height:1.7; padding-left:20px; list-style:none; margin:0;">`;
         
@@ -572,7 +594,9 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
             return;
         }
 
-        const latest = posts[0];
+        // Ordina per data decrescente e prendi il più recente
+        const sortedPosts = [...posts].sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
+        const latest = sortedPosts[0];
         const slug = makeSlug(latest.date);
         const filename = `${folder}/${slug}.html`;
         
@@ -617,25 +641,6 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
 
         // Ultimo pubblicato
         generateUltimoPubblicato(tribuna, inediti, disiecta);
-    }
-
-    // Converte data italiana in oggetto Date per confronto
-    function parseItalianDate(dateStr) {
-        const mesi = {
-            'gennaio': 0, 'febbraio': 1, 'marzo': 2, 'aprile': 3,
-            'maggio': 4, 'giugno': 5, 'luglio': 6, 'agosto': 7,
-            'settembre': 8, 'ottobre': 9, 'novembre': 10, 'dicembre': 11
-        };
-        const parts = dateStr.toLowerCase().split(' ');
-        if (parts.length === 3) {
-            const day = parseInt(parts[0]);
-            const month = mesi[parts[1]];
-            const year = parseInt(parts[2]);
-            if (!isNaN(day) && month !== undefined && !isNaN(year)) {
-                return new Date(year, month, day);
-            }
-        }
-        return new Date(0);
     }
 
     function generateUltimoPubblicato(tribuna, inediti, disiecta) {
