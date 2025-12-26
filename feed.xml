@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Notariqon – casa d'Arno</title>
+    <link>https://guidoturco.github.io</link>
+    <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
+    <language>it-IT</language>
+    <lastBuildDate>Thu, 26 Dec 2025 12:00:00 +0100</lastBuildDate>
+    <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+        <title>Via Babelia: Il Famoso Silenzio</title>
+        <link>https://guidoturco.github.io/disiecta/26-dicembre-2025.html</link>
+        <guid>https://guidoturco.github.io/disiecta/26-dicembre-2025.html</guid>
+        <pubDate>Fri, 26 Dec 2025 12:00:00 +0100</pubDate>
+        <description>Dopo un secolo e mezzo, ci sono ancora persone colte che si interrogano sul Famoso Silenzio di Rimbaud!</description>
+    </item>
+    
+    <item>
+        <title>Via Babelia: Il passeggero e Stella Maris</title>
+        <link>https://guidoturco.github.io/disiecta/25-dicembre-2025.html</link>
+        <guid>https://guidoturco.github.io/disiecta/25-dicembre-2025.html</guid>
+        <pubDate>Thu, 25 Dec 2025 12:00:00 +0100</pubDate>
+        <description>Mini recensione su Cormac McCarthy</description>
+    </item>
+    
+    <item>
+        <title>Tribuna Critica: Restare – Pierluigi Cappello</title>
+        <link>https://guidoturco.github.io/recensioni/24-dicembre-2025.html</link>
+        <guid>https://guidoturco.github.io/recensioni/24-dicembre-2025.html</guid>
+        <pubDate>Wed, 24 Dec 2025 12:00:00 +0100</pubDate>
+        <description>Scheda critica della poesia "Restare" di Pierluigi Cappello</description>
+    </item>
+    
+    <item>
+        <title>Via Babelia: Ainsi, toujours, vers l'azur noir</title>
+        <link>https://guidoturco.github.io/disiecta/24-dicembre-2025.html</link>
+        <guid>https://guidoturco.github.io/disiecta/24-dicembre-2025.html</guid>
+        <pubDate>Wed, 24 Dec 2025 12:00:00 +0100</pubDate>
+        <description>Riflessione su Mallarmé</description>
+    </item>
+    
+    <item>
+        <title>Tribuna Critica: Prepari la tavola ed io spesso penso alla morte – Roberto Modafferi</title>
+        <link>https://guidoturco.github.io/recensioni/23-dicembre-2025.html</link>
+        <guid>https://guidoturco.github.io/recensioni/23-dicembre-2025.html</guid>
+        <pubDate>Tue, 23 Dec 2025 12:00:00 +0100</pubDate>
+        <description>Scheda critica della poesia di Roberto Modafferi</description>
+    </item>
+
+</channel>
+</rss>
