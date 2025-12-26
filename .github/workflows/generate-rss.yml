@@ -29,4 +29,3 @@ jobs:
           git add feed.xml
           git diff --staged --quiet || git commit -m "Auto-update RSS feed"
           git push
-
