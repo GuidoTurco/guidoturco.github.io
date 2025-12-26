@@ -115,6 +115,23 @@ h1 {
     color: #777;
 }
 
+/* Continua (per racconti a puntate) */
+.continua {
+    text-align: right;
+    font-style: italic;
+    color: #888;
+    margin: 30px 0 40px 0;
+    font-size: 0.95em;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    font-size: 0.8em;
+    color: #aaa;
+    margin: 40px 0 20px 0;
+}
+
 /* Torna */
 .torna {
     margin-top: 70px;
