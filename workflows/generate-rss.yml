@@ -1,1 +1,32 @@
+name: Generate RSS Feed
+
+on:
+  push:
+    paths:
+      - 'data/*.json'
+  workflow_dispatch:
+
+jobs:
+  generate-feed:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Generate RSS feed
+        run: node generate-feed.js
+        
+      - name: Commit and push feed.xml
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add feed.xml
+          git diff --staged --quiet || git commit -m "Auto-update RSS feed"
+          git push
 
