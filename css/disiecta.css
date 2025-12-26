@@ -80,6 +80,23 @@ h2 {
     width: 100%;
     height: auto;
 }
+/* Immagine principale (in evidenza sotto il titolo) */
+.immagine-principale {
+    margin: 0 0 2em 0;
+    text-align: center;
+}
+.immagine-principale img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.immagine-principale figcaption {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 0.8em;
+    font-style: italic;
+}
 /* Link musicale */
 .musica {
     margin: 30px 0;
