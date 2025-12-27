@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="nkeBfReULDwNvxD7W7cDmXdaRxpF-6PngFIEwV0bpaE" />
     <title>Notariqon – casa d'Arno</title>
-    <link rel="alternate" type="application/rss+xml" title="Notariqon RSS" href="https://guidoturco.github.io/feed.xml">
     <style>
         body {
             font-family: 'Helvetica', sans-serif;
@@ -356,7 +356,6 @@
             <a href="#disiecta">Via Babelia</a>
             <a href="#rete">In Rete</a>
             <a href="#contatti">Contatti</a>
-            <a href="feed.xml" title="Feed RSS">RSS</a>
         </nav>
     </header>
 
@@ -567,7 +566,8 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         let html = `<h3>${archiveTitle}</h3><ul style="font-size:0.9em; line-height:1.7; padding-left:20px; list-style:none; margin:0;">`;
         
         visiblePosts.forEach(post => {
-            const filename = post.file ? `${folder}/${post.file}` : `${folder}/${makeSlug(post.date)}.html`;
+            const slug = makeSlug(post.date);
+            const filename = `${folder}/${slug}.html`;
             // Se c'è author, mostra "Autore (Titolo)", altrimenti solo titolo
             const displayText = post.author 
                 ? `${post.author} (${post.title})`
@@ -598,7 +598,8 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         // Ordina per data decrescente e prendi il più recente
         const sortedPosts = [...posts].sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
         const latest = sortedPosts[0];
-        const filename = latest.file ? `${folder}/${latest.file}` : `${folder}/${makeSlug(latest.date)}.html`;
+        const slug = makeSlug(latest.date);
+        const filename = `${folder}/${slug}.html`;
         
         // Testo del link in base alla sezione
         let linkText = 'Leggi tutto →';
@@ -657,7 +658,8 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         allPosts.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
 
         const ultimo = allPosts[0];
-        const filename = ultimo.file ? `${ultimo.folder}/${ultimo.file}` : `${ultimo.folder}/${makeSlug(ultimo.date)}.html`;
+        const slug = makeSlug(ultimo.date);
+        const filename = `${ultimo.folder}/${slug}.html`;
 
         document.getElementById('ultimo-title').textContent = ultimo.title;
         
@@ -735,7 +737,8 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         
         let html = '';
         schede.forEach(scheda => {
-            const filename = scheda.file ? `recensioni/${scheda.file}` : `recensioni/${makeSlug(scheda.date)}.html`;
+            const slug = makeSlug(scheda.date);
+            const filename = `recensioni/${slug}.html`;
             html += `<li><a href="${filename}" target="_blank" rel="noopener">${scheda.date} – <em>${scheda.title}</em></a></li>`;
         });
 
