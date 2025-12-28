@@ -326,6 +326,93 @@
         #author-modal ul li a:hover {
             text-decoration: underline;
         }
+
+        /* Modale RSS */
+        #rss-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        #rss-modal.visible {
+            display: flex;
+        }
+        #rss-modal .modal-content {
+            background: white;
+            padding: 30px;
+            max-width: 550px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 4px;
+            position: relative;
+        }
+        #rss-modal .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #999;
+        }
+        #rss-modal .modal-close:hover {
+            color: #333;
+        }
+        #rss-modal h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        #rss-modal p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #444;
+        }
+        #rss-modal .rss-link {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        #rss-modal h4 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #333;
+        }
+        #rss-modal ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #rss-modal ul li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        #rss-modal ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+        #rss-modal ul li a:hover {
+            text-decoration: underline;
+        }
+        #rss-modal .sezione-tag {
+            font-size: 0.8em;
+            color: #888;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -345,6 +432,18 @@
         </div>
     </div>
 
+    <!-- Modale RSS -->
+    <div id="rss-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeRssModal()">&times;</span>
+            <h3>Feed RSS</h3>
+            <p>Puoi seguire gli aggiornamenti di Notariqon tramite il feed RSS. Copia questo indirizzo nel tuo lettore di feed preferito (Feedly, Inoreader, NetNewsWire, ecc.):</p>
+            <div class="rss-link">https://guidoturco.github.io/feed.xml</div>
+            <h4>Ultime uscite</h4>
+            <ul id="rss-ultime-uscite"></ul>
+        </div>
+    </div>
+
     <header id="top">
         <h1>Notariqon</h1>
         <p class="subtitle">casa d'Arno</p>
@@ -355,6 +454,7 @@
             <a href="#tribuna">Tribuna Critica</a>
             <a href="#disiecta">Via Babelia</a>
             <a href="#rete">In Rete</a>
+            <a href="#" onclick="openRssModal(); return false;">RSS</a>
             <a href="#contatti">Contatti</a>
         </nav>
     </header>
@@ -642,6 +742,9 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
 
         // Ultimo pubblicato
         generateUltimoPubblicato(tribuna, inediti, disiecta);
+
+        // Popola ultime uscite per modale RSS
+        populateRssUltimeUscite(tribuna, inediti, disiecta);
     }
 
     function generateUltimoPubblicato(tribuna, inediti, disiecta) {
@@ -757,8 +860,55 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
 
     // Chiudi modale con ESC
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') {
+            closeModal();
+            closeRssModal();
+        }
     });
+
+    // === MODALE RSS ===
+    function openRssModal() {
+        document.getElementById('rss-modal').classList.add('visible');
+    }
+
+    function closeRssModal() {
+        document.getElementById('rss-modal').classList.remove('visible');
+    }
+
+    // Chiudi modale RSS cliccando fuori
+    document.getElementById('rss-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeRssModal();
+    });
+
+    // Popola ultime uscite nella modale RSS
+    function populateRssUltimeUscite(tribuna, inediti, disiecta) {
+        const container = document.getElementById('rss-ultime-uscite');
+        if (!container) return;
+
+        const allPosts = [];
+        tribuna.forEach(p => allPosts.push({...p, sezione: 'Tribuna', folder: 'recensioni'}));
+        inediti.forEach(p => allPosts.push({...p, sezione: 'Inediti', folder: 'inediti'}));
+        disiecta.forEach(p => allPosts.push({...p, sezione: 'Via Babelia', folder: 'disiecta'}));
+
+        if (allPosts.length === 0) {
+            container.innerHTML = '<li><em>Nessun contenuto ancora.</em></li>';
+            return;
+        }
+
+        // Ordina per data e prendi le ultime 5
+        allPosts.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
+        const ultimi = allPosts.slice(0, 5);
+
+        let html = '';
+        ultimi.forEach(post => {
+            const slug = makeSlug(post.date);
+            const filename = `${post.folder}/${slug}.html`;
+            const titolo = post.author ? `${post.author} – ${post.title}` : post.title;
+            html += `<li><a href="${filename}" target="_blank" rel="noopener">${post.date}: ${titolo}</a> <span class="sezione-tag">[${post.sezione}]</span></li>`;
+        });
+
+        container.innerHTML = html;
+    }
     </script>
 
     <!-- GoatCounter analytics -->
