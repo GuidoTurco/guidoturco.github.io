@@ -231,9 +231,6 @@
 
         /* Box Ultimo pubblicato */
         #ultimo-pubblicato {
-            display: flex;
-            align-items: center;
-            gap: 20px;
             max-width: 600px;
             margin: 40px auto 50px auto;
             padding: 20px;
@@ -241,32 +238,42 @@
             border: 1px solid #eee;
             border-left: 3px solid #333;
         }
-        #ultimo-pubblicato img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        #ultimo-pubblicato .ultimo-content {
-            flex: 1;
-        }
         #ultimo-pubblicato .ultimo-label {
             font-size: 0.75em;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #888;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        #ultimo-pubblicato .ultimo-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        #ultimo-pubblicato .ultimo-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        #ultimo-pubblicato .ultimo-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        #ultimo-pubblicato .ultimo-item-content {
+            flex: 1;
         }
         #ultimo-pubblicato .ultimo-title {
-            font-size: 1.1em;
+            font-size: 1.05em;
             font-weight: bold;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             color: #222;
         }
         #ultimo-pubblicato .ultimo-author {
-            font-size: 0.95em;
+            font-size: 0.9em;
             color: #555;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         #ultimo-pubblicato .ultimo-section {
             font-size: 0.85em;
@@ -280,13 +287,13 @@
             text-decoration: underline;
         }
         @media (max-width: 500px) {
-            #ultimo-pubblicato {
+            #ultimo-pubblicato .ultimo-item {
                 flex-direction: column;
                 text-align: center;
             }
-            #ultimo-pubblicato img {
-                width: 60px;
-                height: 60px;
+            #ultimo-pubblicato .ultimo-item img {
+                width: 50px;
+                height: 50px;
             }
         }
 
@@ -486,12 +493,9 @@
 
     <!-- Box Ultimo pubblicato -->
     <div id="ultimo-pubblicato">
-        <img src="images/image_header.png" alt="">
-        <div class="ultimo-content">
-            <div class="ultimo-label">Ultimo pubblicato</div>
-            <div class="ultimo-title" id="ultimo-title">—</div>
-            <div class="ultimo-author" id="ultimo-author"></div>
-            <div class="ultimo-section" id="ultimo-section"></div>
+        <div class="ultimo-label">Ultimo pubblicato</div>
+        <div class="ultimo-items" id="ultimo-items">
+            <!-- Generato dinamicamente -->
         </div>
     </div>
 
@@ -778,20 +782,36 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         // Ordina per data decrescente
         allPosts.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
 
-        const ultimo = allPosts[0];
-        const slug = makeSlug(ultimo.date);
-        const filename = `${ultimo.folder}/${slug}.html`;
-
-        document.getElementById('ultimo-title').textContent = ultimo.title;
+        // Trova la data più recente
+        const latestDate = allPosts[0].date;
         
-        if (ultimo.author) {
-            document.getElementById('ultimo-author').textContent = ultimo.author;
-        } else {
-            document.getElementById('ultimo-author').style.display = 'none';
-        }
+        // Filtra tutti i post con la data più recente
+        const latestPosts = allPosts.filter(p => p.date === latestDate);
 
-        document.getElementById('ultimo-section').innerHTML = 
-            `${ultimo.date} in <a href="#${ultimo.sezId}">${ultimo.sezione}</a> · <a href="${filename}" target="_blank" rel="noopener">Leggi →</a>`;
+        const container = document.getElementById('ultimo-items');
+        let html = '';
+
+        latestPosts.forEach(post => {
+            const slug = makeSlug(post.date);
+            const filename = `${post.folder}/${slug}.html`;
+            
+            const authorLine = post.author 
+                ? `<div class="ultimo-author">${post.author}</div>` 
+                : '';
+
+            html += `
+                <div class="ultimo-item">
+                    <img src="images/image_header.png" alt="">
+                    <div class="ultimo-item-content">
+                        <div class="ultimo-title">${post.title}</div>
+                        ${authorLine}
+                        <div class="ultimo-section">${post.date} in <a href="#${post.sezId}">${post.sezione}</a> · <a href="${filename}" target="_blank" rel="noopener">Leggi →</a></div>
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
     }
 
     window.onload = init;
