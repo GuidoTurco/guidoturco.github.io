@@ -3,158 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notariqon | Manifesto della Tribuna Critica</title>
-    <link rel="stylesheet" href="../css/scheda.css">
-    <script src="../js/protezione.js" defer></script>
+    <title>Manifesto della Tribuna Critica | Notariqon</title>
+    <meta name="description" content="Manifesto della Tribuna Critica. Principi per la lettura, l'analisi e la valutazione della poesia contemporanea.">
     <style>
-        .citazione {
-            margin: 30px 0;
-            padding: 20px 30px;
-            border-left: 3px solid #c9b896;
-            background: #faf8f3;
-            font-style: italic;
+        :root {
+            --text-color: #1a1a1a;
+            --bg-color: #fdfcfa;
+            --accent-color: #8b0000;
+            --border-color: #d4d0c8;
         }
-        .citazione-versi {
-            font-style: italic;
-            line-height: 2;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.2rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        blockquote {
+            margin: 1.5rem 0;
+            padding: 0 2rem;
+            font-style: italic;
+            color: #444;
+            border-left: 2px solid var(--border-color);
+        }
+
+        blockquote p {
+            margin-bottom: 0.5rem;
+        }
+
+        .citazione-fonte {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
         .principio {
-            margin-top: 40px;
+            margin-bottom: 1.5rem;
         }
-        .principio h3 {
-            color: #5a3f11;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+
+        .principio-num {
+            font-weight: bold;
+            color: var(--accent-color);
         }
-        .principio ul {
-            margin: 15px 0;
-            padding-left: 25px;
+
+        .sezione-principi {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
         }
-        .principio li {
-            margin-bottom: 10px;
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+                padding: 2rem 1rem 3rem;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                letter-spacing: 0.1em;
+            }
+
+            blockquote {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Protezione anti-copia */
+        .content {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
 <body>
-    <div class="scheda">
-        <h1>Manifesto della Tribuna Critica</h1>
-        
-        <hr>
 
-        <h2>Assunto</h2>
-        
-        <p>La poesia non è un rifugio estetico, ma un atto di costruzione e di interpretazione critica della realtà.</p>
-        
-        <p>Questa tribuna nasce come spazio rigoroso di lettura, analisi e valutazione della poesia contemporanea e della tradizione, senza concessioni a mode superficiali o a letture celebrative.</p>
-        
-        <p>La poesia, quando riesce, è una forma di conoscenza, non un mero esercizio di stile o un'autocompiacente esposizione dell'io. Dev'essere personale ma porsi universalmente. Può rivelare il mondo – ma questa ambizione non le garantisce alcuno statuto speciale: deve dimostrarla nel testo.</p>
-        
-        <p>Una poesia è interessante per la sua portata di verità e novità. Non deve, cioè, essere artefatta e deve poter offrire orizzonti nuovi, contenutistici e, si spera, formali (linguistici), in un tutt'uno, per l'interpretazione della realtà.</p>
-        
-        <div class="citazione">
-            <p>Il grande Montale ha scritto (in <em>Diario del '71 e del '72</em>):</p>
-            <p class="citazione-versi">
-                La poesia non è fatta per nessuno,<br>
-                non per altri e nemmeno per chi la scrive.<br>
-                Perché nasce? Non nasce affatto e dunque<br>
-                non è mai nata. Sta come una pietra<br>
-                o un granello di sabbia. Finirà<br>
-                con tutto il resto.
-            </p>
-        </div>
-        
-        <p>Montale opera un finto e ironico screditamento della poesia, della sua funzione, ma di fatto ne decreta la massima importanza al di fuori e al di là del poeta stesso (<em>Sta come una pietra…</em>) che, in un certo senso si limita a "trovarla" e offrirla al mondo (ovvero agli uomini) almeno finché questo esisterà (<em>Finirà / con tutto il resto</em>), annullandone qualunque aspetto metafisico.</p>
-        
-        <p>Nel suo compito più alto e nei suoi risultati migliori, la poesia è dunque un medium che ci parla dell'uomo e della verità attraverso la rappresentazione o la narrazione in cui il senso si è come concentrato. Il poeta non è un individuo privilegiato calato dall'alto, ma piuttosto qualcuno che cerca di dare voce e forma al vissuto quotidiano, per mostrarne la verità. La critica, quindi, non deve limitarsi a smascherare l'io poetico quando è pura confezione retorica, ma valorizzare chi, nella propria ordinaria condizione umana, riesce a cogliere un significato universale.</p>
-        
-        <p>La poesia agisce tra l'effabile e l'ineffabile, tra logica e delirio, tra conscio e inconscio: è una forma di "pensiero emotivo" che permette di legare il diverso e l'identico in un unico atto creativo. Il "pathos" – inteso come concentrazione di energia originaria – diventa il momento in cui la parola poetica si sprigiona, rompendo la passività dell'esistere. Se la poesia è, esiste anche un modo di pensare che la rende possibile: un pensiero analogico, asimmetrico, che non si riduce alla sola razionalità.</p>
-        
-        <div class="citazione">
-            <p>Nella consapevolezza del ruolo centrale che la forma riveste nell'atto poetico, vale la pena ricordare una celebre citazione di Valéry, considerata a fondamento del nostro canone:</p>
-            <p><em>Le poème — cette hésitation prolongée entre le son et le sens. Si un vers produit un sens exact — c'est-à-dire qui puisse être traduit soit par une autre expression, soit par une représentation unique — ce vers est aboli par ce sens.</em></p>
-        </div>
+<header>
+    <h1>Manifesto della Tribuna Critica</h1>
+    <p class="subtitle">Notariqon — casa d'Arno</p>
+</header>
 
-        <hr>
+<main class="content">
 
-        <h2>Principi</h2>
-        
-        <div class="principio">
-            <h3>1. La poesia è costruzione, non espressione spontanea.</h3>
-            <ul>
-                <li>Il poeta non è un trascrittore di emozioni, ma un architetto della parola.</li>
-                <li>La scrittura poetica è un processo di sottrazione e raffinazione.</li>
-                <li>Il testo deve cancellare ogni traccia di esecuzione, lasciando spazio solo al risultato.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>2. La poesia deve evocare e trasmettere, non spiegare.</h3>
-            <ul>
-                <li>Il valore di un testo si misura dalla sua capacità di creare risonanza nel lettore.</li>
-                <li>Un testo che ha bisogno di essere spiegato ha già fallito nel suo intento poetico.</li>
-                <li>La poesia contemporanea scivola tra due estremi ugualmente fallimentari: l'oscurità autoreferenziale (ermetismo iper-costruito che si chiude in codici privati, dove la complessità diventa teorema fine a sé stesso) e il frammento gratuito (poesia che rinuncia alla costruzione in nome di una presunta autenticità emotiva, accumulo di immagini senza ossatura). Il primo pecca per eccesso di calcolo senza necessità, il secondo per difetto di forma.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>3. La poesia deve avere una struttura e una consapevolezza ritmica.</h3>
-            <ul>
-                <li>Il ritmo – sia metrico tradizionale sia prosodico libero – è un principio costruttivo essenziale, non un accessorio.</li>
-                <li>La metrica non deve essere un feticcio, ma uno strumento di intensificazione espressiva.</li>
-                <li>La libertà formale non è sinonimo di casualità o sciatteria.</li>
-                <li>La poesia, per essere viva, deve appartenere al tempo in cui nasce. L'intemporale è un'illusione romantica: ogni grande poesia è figlia del suo presente, anche quando lo nega. Il lessico, le immagini e la voce poetica devono rendere conto di questo rapporto, anche in forma indiretta o trasfigurata. L'enfasi inattuale, la lingua reliquiaria, la profezia decontestualizzata non sono elevate: sono retorica che ha perso la sua funzione.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>4. Ironia e anti-lirismo sono strumenti di verità solo se trasformano.</h3>
-            <ul>
-                <li>La poesia non è un santuario della bellezza, ma un mezzo per smascherare la realtà.</li>
-                <li>L'ironia è una risorsa critica, non una concessione alla leggerezza.</li>
-                <li>La materia poetica include anche il quotidiano, il brutale, il dissonante.</li>
-                <li>La parodia è legittima solo se obbliga ciò che parodizza a rinnovarsi. Una parodia che si limita a sbeffeggiare, senza proporre nuove forme o visioni, è sterile e conservatrice.</li>
-                <li>Divertire non è sufficiente: l'anti-poesia che non trasforma resta innocua e complice.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>5. Il rigore formale come limite all'indulgenza espressiva.</h3>
-            <ul>
-                <li>La poesia è atto di costruzione rigorosa e interpretazione critica della realtà, non luogo per sfoghi emotivi incontrollati o proteste grezze.</li>
-                <li>Il linguaggio crudo, volgare o manifesto è legittimo solo quando integrato in una struttura poetica consapevole, capace di trasformare l'esperienza individuale in oggetto poetico universale.</li>
-                <li>È dovere della critica distinguere la vera forza espressiva dalla superficialità di un'emotività non mediata da forma e senso.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>6. La poesia non deve isolarsi, ma cercare il lettore in modo autentico.</h3>
-            <ul>
-                <li>Una poesia che non trasmette nulla al lettore è fallimentare.</li>
-                <li>Le omofonie, le rime, i richiami intertestuali creano una densità semantica che non appartiene alla pura logica.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>7. Il poeta come individuo immerso nella vita ordinaria.</h3>
-            <ul>
-                <li>L'idea di un poeta privilegiato o "eccezionale" è un inganno: la condizione autentica dell'io è sempre prosaica, parte di questa società, di questo sistema.</li>
-                <li>La grandezza di una poesia risiede nella capacità di ricavare un senso universale dalle azioni particolari, per nulla "abbandonate" dal significato profondo.</li>
-                <li>L'eccezionalità sta nel saper guardare il quotidiano con occhi nuovi, non nel collocarsi a distanza dalla realtà di tutti i giorni.</li>
-                <li>Anche quando l'Io è al centro della poesia, dev'essere attraversato dalla forma, non semplicemente esibito. La mera confessione diretta non è poesia.</li>
-            </ul>
-        </div>
-        
-        <div class="principio">
-            <h3>8. La poesia è un atto di "riduzione all'immanenza".</h3>
-            <ul>
-                <li>La verità non vive fuori dal nostro orizzonte, ma si nasconde nel gesto più semplice e concreto.</li>
-                <li>In questo senso, la poesia può apparire come una sorta di "superstizione salvifica": è l'intrusione del mistero in ciò che è ordinario.</li>
-            </ul>
-        </div>
+<section>
+    <h2>Assunto</h2>
+    
+    <p>La poesia non è un rifugio estetico, ma un atto di costruzione e di interpretazione critica della realtà.</p>
+    
+    <p>Questa tribuna nasce come spazio rigoroso di lettura, analisi e valutazione della poesia contemporanea e della tradizione, senza concessioni a mode superficiali o a letture celebrative. La poesia, quando riesce, è una forma di conoscenza. Può rivelare il mondo — ma questa ambizione non le garantisce alcuno statuto speciale: deve dimostrarla nel testo.</p>
+    
+    <p>Una poesia è interessante per la sua portata di verità e novità: deve poter offrire orizzonti nuovi, contenutistici e formali, per l'interpretazione della realtà.</p>
 
-        <hr>
+    <p class="citazione-fonte">Ha scritto Montale:</p>
+    <blockquote>
+        <p>La poesia non è fatta per nessuno, / non per altri e nemmeno per chi la scrive. / Perché nasce? Non nasce affatto e dunque / non è mai nata. Sta come una pietra / o un granello di sabbia. Finirà / con tutto il resto.</p>
+    </blockquote>
+    <p>La poesia esiste al di là del poeta stesso; questi si limita a trovarla e offrirla al mondo, finché il mondo esisterà.</p>
 
-        <p class="torna"><a href="../index.html#tribuna">← Torna alla Tribuna Critica</a></p>
-    </div>
+    <p class="citazione-fonte">E Valéry:</p>
+    <blockquote>
+        <p>Le poème — cette hésitation prolongée entre le son et le sens.</p>
+    </blockquote>
+    <p>Il poema come esitazione prolungata tra il suono e il senso: la forma non è ornamento, ma sostanza stessa del significato.</p>
+</section>
+
+<section class="sezione-principi">
+    <h2>Principi</h2>
+
+    <p class="principio"><span class="principio-num">1.</span> La poesia è costruzione, non espressione spontanea. Il poeta non è un trascrittore di emozioni, ma un architetto della parola. La scrittura poetica è un processo di sottrazione e raffinazione: il testo deve cancellare ogni traccia di esecuzione, lasciando spazio solo al risultato.</p>
+
+    <p class="principio"><span class="principio-num">2.</span> La poesia deve evocare, non spiegare. Il valore di un testo si misura dalla sua capacità di creare risonanza nel lettore. Un testo che ha bisogno di essere spiegato ha già fallito nel suo intento poetico.</p>
+
+    <p class="principio"><span class="principio-num">3.</span> La poesia deve avere struttura e consapevolezza ritmica. Il ritmo — sia metrico tradizionale sia prosodico libero — è un principio costruttivo essenziale. La metrica non è un feticcio, ma uno strumento di intensificazione; la libertà formale non è sinonimo di casualità o sciatteria.</p>
+
+    <p class="principio"><span class="principio-num">4.</span> La poesia deve appartenere al tempo in cui nasce. L'intemporale è un'illusione romantica: ogni grande poesia è figlia del suo presente, anche quando lo nega. L'enfasi inattuale, la lingua reliquiaria, la profezia decontestualizzata non sono elevate: sono retorica che ha perso la sua funzione.</p>
+
+    <p class="principio"><span class="principio-num">5.</span> Ironia e anti-lirismo sono strumenti di verità solo se trasformano. La poesia non è un santuario della bellezza, ma un mezzo per smascherare la realtà. La materia poetica include il quotidiano, il brutale, il dissonante. La parodia è legittima solo se obbliga ciò che parodizza a rinnovarsi; l'anti-poesia che non trasforma resta innocua e complice.</p>
+
+    <p class="principio"><span class="principio-num">6.</span> Il rigore formale è limite all'indulgenza espressiva. Il linguaggio crudo o manifesto è legittimo solo quando integrato in una struttura consapevole, capace di trasformare l'esperienza individuale in oggetto poetico. È compito della critica distinguere la vera forza espressiva dalla superficialità di un'emotività non mediata da forma e senso.</p>
+
+    <p class="principio"><span class="principio-num">7.</span> La poesia non deve isolarsi, ma cercare il lettore. Una poesia che non trasmette nulla è fallimentare. Le omofonie, le rime, i richiami intertestuali creano una densità semantica che non appartiene alla pura logica e che esige un destinatario.</p>
+
+    <p class="principio"><span class="principio-num">8.</span> La poesia è un atto di riduzione all'immanenza. La verità non vive fuori dal nostro orizzonte, ma si nasconde nel gesto più semplice e concreto. In questo senso la poesia è l'intrusione del mistero in ciò che è ordinario.</p>
+
+</section>
+
+</main>
+
+<footer>
+    <p><a href="index.html">Notariqon</a> — casa d'Arno</p>
+</footer>
+
+<script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+        }
+    });
+</script>
+
 </body>
 </html>
