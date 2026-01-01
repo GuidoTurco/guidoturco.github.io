@@ -3,117 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notariqon | Canone Critico per l'Analisi Poetica</title>
-    <link rel="stylesheet" href="../css/scheda.css">
-    <script src="../js/protezione.js" defer></script>
+    <title>Canone critico per l'analisi poetica | Notariqon</title>
+    <meta name="description" content="Canone critico per l'analisi poetica. Base interpretativa per la Tribuna Critica di Notariqon.">
     <style>
-        .dichiarazione {
-            margin: 35px 0;
-            padding: 0 0 0 20px;
-            border-left: 3px solid #c9b896;
+        :root {
+            --text-color: #1a1a1a;
+            --bg-color: #fdfcfa;
+            --accent-color: #8b0000;
+            --border-color: #d4d0c8;
         }
-        .dichiarazione p {
-            margin-bottom: 15px;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .nota-finale {
-            margin-top: 50px;
-            padding: 25px;
-            background: #faf8f3;
-            border-radius: 8px;
+
+        body {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
         }
-        .nota-finale h3 {
-            color: #5a3f11;
-            margin-bottom: 15px;
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .articolo {
+            margin-bottom: 2rem;
+        }
+
+        .numero {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .nota {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nota h2 {
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+                padding: 2rem 1rem 3rem;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        /* Protezione anti-copia */
+        .content {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
 <body>
-    <div class="scheda">
-        <h1>Canone Critico per l'Analisi Poetica</h1>
-        <p class="data">Guida all'Interpretazione dei Testi</p>
-        
-        <hr>
 
-        <h2>Nota metodologica preliminare</h2>
-        
-        <p>Questo canone si applica alla poesia che ambisce allo statuto lirico, non a ogni forma versificata. Filastrocche, componimenti narrativi, o scritture di genere vanno valutati con criteri appropriati al loro registro. La distinzione è necessaria per evitare confusioni metodologiche.</p>
+<header>
+    <h1>Canone critico per l'analisi poetica</h1>
+    <p class="subtitle">Tribuna Critica — Notariqon</p>
+</header>
 
-        <hr>
+<main class="content">
 
-        <h2>Dichiarazioni</h2>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la poesia, oggi, non ha più diritto d'asilo dentro un sistema ideologico o culturale collettivo. L'epoca delle grandi narrazioni si è dissolta, e con essa la possibilità di una poesia che sia il braccio lirico di una rivoluzione, il prolungamento etico di una visione del mondo condivisa. La poesia, se ancora è possibile, è tale solo in quanto accetta di vivere nell'ambiguità, nella contraddizione, nella difficoltà stessa del suo statuto. Essa non è, oggi, un destino: è semmai una condizione precaria, una pratica incerta che si legittima nel momento in cui rinuncia a ogni legittimazione esterna.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che ogni tentativo di costruire una poetica organica, normativa o totalizzante è destinato al fallimento. Ogni sforzo teorico sproporzionato, ogni impianto critico che voglia fornire una legittimità superiore alla poesia tramite concetti filosofici, paradigmi storici o missioni culturali, ci appare oggi come un gesto fuori misura. La poesia si può fare con la strofa o con il verso libero, con la rima o con la dissonanza: ciò che conta è la tenuta interna del testo, la sua capacità di generare senso, emozione o tensione. Non è più tempo di teorizzare, è tempo di scrivere bene.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la critica letteraria non può superare la poesia, imporsi ad essa. Il critico è oggi un lettore tra gli altri, più attento forse, più esperto, ma non più autorevole per mandato divino o accademico. Il suo compito non è fondare cattedrali, ma tenere acceso il lume: leggere, scrivere, commentare, polemizzare. La forma breve – l'articolo, la nota, la recensione – è la sua misura più giusta.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la satira, la polemica, la maldicenza perfino, possono essere strumenti critici. Non per distruggere, ma per demistificare. Per dire che il re è nudo. Quando la cultura diventa cerimoniale, quando l'editoria è cooptazione e non selezione, quando le antologie servono più a promuovere chi le scrive che chi vi è incluso, è compito della critica rompere la danza. Meglio una frase velenosa che una lode servile. Meglio l'ironia che la deferenza.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che non esiste più un pubblico della poesia. O meglio: il pubblico esiste, ma è composto in gran parte da poeti o aspiranti tali. L'autoreferenzialità è diventata la cifra stessa del consumo poetico. La poesia è letta dai poeti, recensita dai poeti, antologizzata dai poeti. Ciò non significa che il genere è morto: significa solo che si è chiuso in un ghetto. Il problema non è che nessuno legge poesia; è che troppa poesia viene pubblicata senza che nessuno si prenda la briga di dire se vale qualcosa. Il silenzio della critica non è rispetto: è abdicazione.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che l'autoreferenzialità assume forme diverse, ugualmente fallimentari. Da un lato troviamo l'ermetismo iper-costruito che si chiude in codici privati e fa della complessità un teorema fine a sé stesso: una densità semantica e sintattica che diventa cifra stilistica autoreferenziale, producendo testi dove la grandiosità strutturale sfiora l'inintelligibilità. Dall'altro lato troviamo il frammento gratuito, la poesia che rinuncia alla costruzione in nome di una presunta autenticità emotiva, accontentandosi dell'impressione, dell'accumulo di immagini senza ossatura, di un informe che scambia la libertà per licenza. Entrambi tradiscono la poesia: il primo per eccesso di calcolo senza necessità, il secondo per difetto di forma. Il testo contemporaneo scivola tra questi estremi: o verso il mero esercizio tecnico, dove tutto è calcolo e nulla resta, o verso l'informe, dove l'accumulo emotivo non trova più una direzione.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che il vero nemico della poesia non è il mercato, ma la mediocrità legittimata. Le grandi case editrici e le società culturali risultano spesso assenti, lasciando campo all'editoria a pagamento che sforna volumi su volumi di poeti – pochi – e di poetastri – legione. Questo proliferare acritico alimenta l'idea pericolosa che ogni tentativo poetico meriti rispetto di per sé, solo perché in versi: è la morte della poesia. Nel sentire comune, inoltre, la poesia conserva un'aura di nobiltà, retaggio del primo Novecento ormai svuotato di fondamento, poiché nessuno la legge davvero, se non i poeti e i poetastri stessi. E così, a furia di protezioni, si finisce per pubblicare libri illeggibili, pieni di versi che non reggono tre pagine. E nessuno ha il coraggio di dirlo.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che un vero poeta si riconosce come si riconosce un volto bello: non perché conforme a un modello, ma perché ci obbliga a guardare. Non a osservare: a guardare con tensione, a trattenere lo sguardo in un'orbita mobile, in una risonanza continua che impedisce al pensiero di posarsi. I versi di un poeta autentico non si lasciano leggere con indifferenza: si leggono come si guarda un paesaggio assoluto, come si ascolta una melodia che non si riesce a fischiettare. Le idee che evocano rimbalzano di parola in parola, come lo sguardo che cerca un centro e scopre che il centro è il movimento stesso.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la lettura della poesia non è ripetizione fonica, né esibizione performativa. La poesia si legge in silenzio, come si legge uno spartito: perché ogni lettore deve accordare il proprio orecchio al ritmo e al respiro del testo. La poesia non si ascolta, si scopre. E nella scoperta ogni lettore agisce un proprio gesto creativo: corregge mentalmente un verso stonato, amplifica un suono felice, rilegge un'immagine che lo interroga. È in questa complicità intima che si compie la vera funzione del poeta: creare una forma di bellezza che trattiene lo sguardo e obbliga il pensiero a percorrerla senza mai trovare riposo.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la poesia può nascere da un'ossessione emotiva, da un'esperienza che chiede forma. Ma questa non è ancora poesia: lo diventa solo quando si trasforma in un dispositivo formale capace di ricreare tensione nel lettore, al di là dell'intenzione o del sentimento originario dell'autore. La spontaneità è il nemico della poesia. Più cresce l'immediatezza dell'espressione, prima questa si fa lingua morta. Chi scrive davvero scrive sempre contro sé stesso: l'autore deve nascondere i segni di sé come le tracce un omicida, in una bellezza il più possibile compiuta.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la poesia non mostra il poeta, ma il mondo che egli ha reso necessario. Anche quando l'Io è al centro, dev'essere attraversato dalla forma, non semplicemente esibito. La poesia autentica, sia che operi per assenza sia che scelga la presenza dichiarata, convoca il lettore in uno spazio dove il significato non è dato ma generato. Il poeta che si ritrae consente alla forma di interrogare; il poeta che si espone deve farlo attraverso una costruzione che supera la mera confessione. Dove il testo eccede in commento, muore la tensione. Dove l'immagine resiste al suo stesso chiarimento, nasce una delle possibilità della poesia.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la poesia del quotidiano è un campo nobile ma insidioso. Non è inferiore a quella visionaria o metafisica, ma richiede una capacità altrettanto radicale di trasfigurazione. Evitare l'aneddoto, sfuggire all'aforisma, costruire con le parole ciò che supera il gesto compiuto: questa è la sua sfida. I piatti, il bucato, il letto rifatto non sono oggetti minori, ma lo diventano se restano solo cose dette. Trasformarli in simboli non è ornamento, ma necessità poetica. Chi sceglie il quotidiano deve sapere che lavora sulla soglia tra la cronaca e il mistero: e che solo la forma salva.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che la potenza della poesia deriva dalla sua capacità di costruire senso e tensione attraverso la forma: la mera esibizione di rabbia o protesta senza tessitura poetica non può essere considerata poesia compiuta. È fondamentale valutare consapevolmente come il linguaggio difficile o crudo si integri nel testo, come strumento intenzionale e non come fine espressivo. La critica ha il compito di discernere tra espressione emotiva immediata e costruzione poetica, privilegiando sempre quest'ultima come criterio di autenticità e valore.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong> che anche la poesia visionaria, simbolica o metafisica deve fare i conti con il presente. L'evocazione di immagini potenti non basta se il linguaggio risulta archeologico, se il lettore non sente che quella voce nasce ora, per lui. Il rischio della "grande poesia" è la museificazione: quando l'autore sembra parlare per altri tempi, e non per nessuno.</p>
-        </div>
-        
-        <div class="dichiarazione">
-            <p><strong>Noi diciamo</strong>, infine, che non si tratta di essere ottimisti o pessimisti. Si tratta di guardare in faccia la realtà. La poesia è ancora possibile, ma solo se smette di pretendere uno statuto speciale. Solo se accetta di farsi giudicare come ogni altra forma d'arte: per quello che dice, per come lo dice, e per ciò che lascia dopo averlo detto.</p>
-        </div>
+<section>
+    <h2>Nota metodologica</h2>
+    <p>Questo canone si applica alla poesia che ambisce allo statuto lirico, non a ogni forma versificata. Filastrocche, componimenti narrativi o scritture di genere vanno valutati con criteri appropriati al loro registro.</p>
+    <p>Il documento serve come base interpretativa per la <em>Tribuna Critica</em> e come riferimento per poeti e critici che si accostino al progetto Notariqon. Ogni eccezione al sistema qui delineato va motivata.</p>
+</section>
 
-        <hr>
+<section>
 
-        <div class="nota-finale">
-            <h3>Nota operativa</h3>
-            <p>Questo testo costituisce la base interpretativa e l'argomentario di riferimento per ogni giudizio critico su testi poetici. Va usato come canone per l'analisi, la valutazione e la selezione delle poesie, assumendone i principi come griglia etico-estetica e come filtro per ogni esercizio di discernimento.</p>
-            <p>La valutazione del singolo testo resta prioritaria, ma la critica sa che l'eccellenza poetica emerge da una pratica complessa e non uniforme. Non ogni poesia di un grande poeta è un capolavoro, né ogni singola poesia fallita invalida un percorso. Il giudizio critico deve saper distinguere tra il singolo testo e l'opera complessiva, senza indulgenza ma senza cecità.</p>
-            <p>Ogni eccezione va motivata in rapporto al sistema qui delineato.</p>
-        </div>
+<div class="articolo">
+    <span class="numero">I.</span>
+    <p>La poesia, oggi, non ha più diritto d'asilo dentro un sistema ideologico o culturale collettivo. L'epoca delle grandi narrazioni si è dissolta, e con essa la possibilità di una poesia che sia il braccio lirico di una rivoluzione, il prolungamento etico di una visione del mondo condivisa. La poesia, se ancora è possibile, è tale solo in quanto accetta di vivere nell'ambiguità, nella contraddizione, nella difficoltà stessa del suo statuto. Non è un destino: è una condizione precaria, una pratica incerta che si legittima nel momento in cui rinuncia a ogni legittimazione esterna.</p>
+</div>
 
-        <hr>
+<div class="articolo">
+    <span class="numero">II.</span>
+    <p>Ogni tentativo di costruire una poetica organica, normativa o totalizzante è destinato al fallimento. Ogni sforzo teorico sproporzionato, ogni impianto critico che voglia fornire una legittimità superiore alla poesia tramite concetti filosofici, paradigmi storici o missioni culturali, ci appare oggi come un gesto fuori misura. La poesia si può fare con la strofa o con il verso libero, con la rima o con la dissonanza: ciò che conta è la tenuta interna del testo, la sua capacità di generare senso, emozione o tensione. Non è più tempo di teorizzare, è tempo di scrivere bene.</p>
+</div>
 
-        <p class="torna"><a href="../index.html#tribuna">← Torna alla Tribuna Critica</a></p>
-    </div>
+<div class="articolo">
+    <span class="numero">III.</span>
+    <p>La critica letteraria non può superare la poesia, imporsi ad essa. Il critico è oggi un lettore tra gli altri, più attento forse, più esperto, ma non più autorevole per mandato divino o accademico. Il suo compito non è fondare cattedrali, ma tenere acceso il lume: leggere, scrivere, commentare, polemizzare. La forma breve — l'articolo, la nota, la recensione — è la sua misura più giusta.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">IV.</span>
+    <p>La satira, la polemica, la maldicenza perfino, possono essere strumenti critici. Non per distruggere, ma per demistificare. Per dire che il re è nudo. Quando la cultura diventa cerimoniale, quando l'editoria è cooptazione e non selezione, quando le antologie servono più a promuovere chi le scrive che chi vi è incluso, è compito della critica rompere la danza. Meglio una frase velenosa che una lode servile. Meglio l'ironia che la deferenza.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">V.</span>
+    <p>Non esiste più un pubblico della poesia. O meglio: il pubblico esiste, ma è composto in gran parte da poeti o aspiranti tali. L'autoreferenzialità è diventata la cifra stessa del consumo poetico. Ciò non significa che il genere è morto: significa solo che si è chiuso in un ghetto. Il problema non è che nessuno legge poesia; è che troppa poesia viene pubblicata senza che nessuno si prenda la briga di dire se vale qualcosa. Il silenzio della critica non è rispetto: è abdicazione.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">VI.</span>
+    <p>L'autoreferenzialità assume due forme speculari e ugualmente fallimentari. Da un lato l'ermetismo iper-costruito che si chiude in codici privati e fa della complessità un teorema fine a sé stesso: densità semantica e sintattica che sfiora l'inintelligibilità. Dall'altro il frammento gratuito, la poesia che rinuncia alla costruzione in nome di una presunta autenticità emotiva, accontentandosi dell'impressione, dell'accumulo di immagini senza ossatura. Entrambi tradiscono la poesia: il primo per eccesso di calcolo senza necessità, il secondo per difetto di forma.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">VII.</span>
+    <p>Il vero nemico della poesia non è il mercato, ma la mediocrità legittimata. Le grandi case editrici risultano spesso assenti, lasciando campo all'editoria a pagamento che sforna volumi su volumi di poeti — pochi — e di poetastri — legione. Questo proliferare acritico alimenta l'idea pericolosa che ogni tentativo poetico meriti rispetto di per sé, solo perché in versi. Nel sentire comune la poesia conserva un'aura di nobiltà, retaggio del primo Novecento ormai svuotato di fondamento. E così, a furia di protezioni, si finisce per pubblicare libri illeggibili, pieni di versi che non reggono tre pagine. E nessuno ha il coraggio di dirlo.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">VIII.</span>
+    <p>Un vero poeta si riconosce come si riconosce un volto bello: non perché conforme a un modello, ma perché ci obbliga a guardare. Non a osservare: a guardare con tensione, a trattenere lo sguardo in un'orbita mobile, in una risonanza che impedisce al pensiero di posarsi. I versi di un poeta autentico non si lasciano leggere con indifferenza: si leggono come si guarda un paesaggio assoluto, come si ascolta una melodia che non si riesce a fischiettare. Le idee che evocano rimbalzano di parola in parola, come lo sguardo che cerca un centro e scopre che il centro è il movimento stesso.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">IX.</span>
+    <p>La lettura della poesia non è ripetizione fonica né esibizione performativa. La poesia si legge in silenzio, come si legge uno spartito: perché ogni lettore deve accordare il proprio orecchio al ritmo e al respiro del testo. La poesia non si ascolta, si scopre. E nella scoperta ogni lettore agisce un proprio gesto creativo: corregge mentalmente un verso stonato, amplifica un suono felice, rilegge un'immagine che lo interroga. È in questa complicità intima che si compie la vera funzione del poeta: creare una forma di bellezza che trattiene lo sguardo e obbliga il pensiero a percorrerla senza mai trovare riposo.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">X.</span>
+    <p>La poesia può nascere da un'ossessione emotiva, da un'esperienza che chiede forma. Ma questa non è ancora poesia: lo diventa solo quando si trasforma in un dispositivo formale capace di ricreare tensione nel lettore, al di là dell'intenzione o del sentimento originario dell'autore. La spontaneità è il nemico della poesia. Più cresce l'immediatezza dell'espressione, prima questa si fa lingua morta. Chi scrive davvero scrive sempre contro sé stesso: l'autore deve nascondere i segni di sé come un omicida le proprie tracce, in una bellezza il più possibile compiuta.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">XI.</span>
+    <p>La poesia non mostra il poeta, ma il mondo che egli ha reso necessario. Anche quando l'Io è al centro, dev'essere attraversato dalla forma, non semplicemente esibito. La poesia autentica, sia che operi per assenza sia che scelga la presenza dichiarata, convoca il lettore in uno spazio dove il significato non è dato ma generato. Il poeta che si ritrae consente alla forma di interrogare; il poeta che si espone deve farlo attraverso una costruzione che supera la mera confessione. Dove il testo eccede in commento, muore la tensione. Dove l'immagine resiste al suo stesso chiarimento, nasce una delle possibilità della poesia.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">XII.</span>
+    <p>La poesia del quotidiano è un campo nobile ma insidioso. Non è inferiore a quella visionaria o metafisica, ma richiede una capacità altrettanto radicale di trasfigurazione. Evitare l'aneddoto, sfuggire all'aforisma, costruire con le parole ciò che supera il gesto compiuto: questa è la sua sfida. I piatti, il bucato, il letto rifatto non sono oggetti minori, ma lo diventano se restano solo cose dette. Trasformarli in simboli non è ornamento, ma necessità poetica. Chi sceglie il quotidiano deve sapere che lavora sulla soglia tra la cronaca e il mistero: e che solo la forma salva.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">XIII.</span>
+    <p>La potenza della poesia deriva dalla sua capacità di costruire senso e tensione attraverso la forma: la mera esibizione di rabbia o protesta senza tessitura poetica non può essere considerata poesia compiuta. È fondamentale valutare come il linguaggio difficile o crudo si integri nel testo, come strumento intenzionale e non come fine espressivo. La critica ha il compito di discernere tra espressione emotiva immediata e costruzione poetica, privilegiando sempre quest'ultima come criterio di autenticità e valore.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">XIV.</span>
+    <p>Anche la poesia visionaria, simbolica o metafisica deve fare i conti con il presente. L'evocazione di immagini potenti non basta se il linguaggio risulta archeologico, se il lettore non sente che quella voce nasce ora, per lui. Il rischio della «grande poesia» è la museificazione: quando l'autore sembra parlare per altri tempi, e non per nessuno.</p>
+</div>
+
+<div class="articolo">
+    <span class="numero">XV.</span>
+    <p>Non si tratta di essere ottimisti o pessimisti. Si tratta di guardare in faccia la realtà. La poesia è ancora possibile, ma solo se smette di pretendere uno statuto speciale. Solo se accetta di farsi giudicare come ogni altra forma d'arte: per quello che dice, per come lo dice, e per ciò che lascia dopo averlo detto.</p>
+</div>
+
+</section>
+
+<section class="nota">
+    <h2>Nota operativa</h2>
+    <p>Questo canone costituisce la base interpretativa per ogni giudizio critico sui testi poetici esaminati nella <em>Tribuna Critica</em>. I principi qui enunciati vanno assunti come riferimento per l'analisi e la valutazione.</p>
+    <p>La valutazione del singolo testo resta prioritaria. Non ogni poesia di un grande poeta è un capolavoro, né ogni singola poesia fallita invalida un percorso. Il giudizio critico distingue tra il singolo testo e l'opera complessiva, senza indulgenza ma senza cecità.</p>
+</section>
+
+</main>
+
+<footer>
+    <p><a href="index.html">Notariqon</a> — casa d'Arno</p>
+</footer>
+
+<script>
+    // Disabilita tasto destro
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    // Disabilita scorciatoie copia
+    document.addEventListener('keydown', e => {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+        }
+    });
+</script>
+
 </body>
 </html>
