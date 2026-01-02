@@ -19,6 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://guidoturco.github.io/recensioni/2-gennaio-2026.html</loc>
+    <lastmod>2026-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://guidoturco.github.io/recensioni/1-gennaio-2026.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -51,12 +57,6 @@
   <url>
     <loc>https://guidoturco.github.io/recensioni/23-dicembre-2025.html</loc>
     <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://guidoturco.github.io/inediti/1-gennaio-2026.html</loc>
-    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
