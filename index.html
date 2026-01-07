@@ -850,8 +850,13 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         const minFont = 0.8;
         const maxFont = 1.5;
 
-        // Ordina alfabeticamente
-        authors.sort((a, b) => a.localeCompare(b, 'it'));
+        // Ordina alfabeticamente per cognome
+        authors.sort((a, b) => {
+            // Estrae l'ultimo elemento (cognome) da ogni nome completo
+            const cognomeA = a.trim().split(' ').pop().toLowerCase();
+            const cognomeB = b.trim().split(' ').pop().toLowerCase();
+            return cognomeA.localeCompare(cognomeB, 'it');
+        });
 
         let html = '';
         authors.forEach(author => {
@@ -860,7 +865,14 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
             if (maxCount > minCount) {
                 fontSize = minFont + ((count - minCount) / (maxCount - minCount)) * (maxFont - minFont);
             }
-            html += `<a style="font-size:${fontSize.toFixed(2)}em;" onclick="openAuthorModal('${author.replace(/'/g, "\\'")}')">${author}</a> `;
+            
+            // Separa nome e cognome per mettere il cognome in grassetto
+            const parts = author.trim().split(' ');
+            const cognome = parts.pop();
+            const nome = parts.join(' ');
+            const displayName = nome ? `${nome} <strong>${cognome}</strong>` : `<strong>${cognome}</strong>`;
+            
+            html += `<a style="font-size:${fontSize.toFixed(2)}em;" onclick="openAuthorModal('${author.replace(/'/g, "\\'")}')">${displayName}</a> `;
         });
 
         cloudContainer.innerHTML = html;
