@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours / Percorsi – Guido Turco</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            color: #222;
+            line-height: 1.8;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #444;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 3px solid #333;
+        }
+        
+        /* Contenitore pagine */
+        .pages-container {
+            position: relative;
+            min-height: 600px;
+            margin-bottom: 40px;
+        }
+        
+        /* Singola pagina */
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Layout bilingue */
+        .bilingual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .poem-column {
+            padding: 20px;
+        }
+        
+        .poem-column.french {
+            border-right: 1px solid #ddd;
+        }
+        
+        .poem-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #111;
+        }
+        
+        .poem-text {
+            white-space: pre-line;
+            line-height: 1.9;
+            font-size: 1.05em;
+        }
+        
+        /* Controlli navigazione */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-button {
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: #333;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+        
+        .nav-button:hover:not(:disabled) {
+            color: #000;
+        }
+        
+        .nav-button:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .page-indicator {
+            font-size: 1.1em;
+            color: #666;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        footer a {
+            color: #555;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .bilingual {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .poem-column.french {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 40px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Parcours / Percorsi</h1>
+        <p class="subtitle">Guido Turco</p>
+    </header>
+
+    <div class="intro">
+        <p>Non si tratta di traduzioni dall'italiano, né di esperimenti bilingui: sono testi nati direttamente in francese, lingua del luogo dove vivo da anni, lingua che mi obbliga a un altro tipo di precisione, a un'altra sintassi, a un'altra relazione con il reale.</p>
+        
+        <p>Scrivere in un'altra lingua è una forma di sottrazione dell'io. Se il dialetto piemontese era la lingua del padre e della madre, la lingua dell'affetto e del lavoro, il francese è la lingua dell'esilio volontario, della distanza scelta. Non è ornamento cosmopolita: è necessità. Vivere in Francia significa abitare uno spazio linguistico che non coincide con la propria memoria, che obbliga a ricostruire ogni frase senza poter contare sull'automatismo della lingua madre. Il francese mi costringe a pensare la forma prima del contenuto, a costruire ogni verso come un sistema di tensioni tra parole che non mi appartengono fino in fondo.</p>
+    </div>
+
+    <div class="pages-container">
+        <!-- Pagina 1 -->
+        <div class="page active" data-page="1">
+            <div class="bilingual">
+                <div class="poem-column french">
+                    <div class="poem-title">1. Sans Répercussion</div>
+                    <div class="poem-text">l'angle résiduel
+entre la table et le mur
+
+on essaie de contourner 
+comme lorsqu'on installe une étagère
+sur un mur irrégulier
+notre besoin de déposer le poids
+quelque part
+sur une surface qui accepte
+
+la tasse près du bord
+le profil du couteau 
+la lettre mal pliée sous la tasse
+cherchent leur place
+
+une zone 
+dans le décalage :
+
+le passage se refermera
+sans répercussion</div>
+                </div>
+                <div class="poem-column italian">
+                    <div class="poem-title">1. Senza Ripercussione</div>
+                    <div class="poem-text">l'angolo residuo
+fra il tavolo e il muro
+
+si cerca di aggirarlo
+come quando si monta una mensola
+su un muro irregolare
+il nostro bisogno di deporre il peso
+da qualche parte
+su una superficie che accolga
+
+la tazza vicino al bordo
+il profilo del coltello
+la lettera mal piegata sotto la tazza
+cercano il loro posto
+
+una zona
+nello scarto:
+
+il passaggio si richiuderà
+senza ripercussione</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagina 2 -->
+        <div class="page" data-page="2">
+            <div class="bilingual">
+                <div class="poem-column french">
+                    <div class="poem-title">2. J'habite une Ville</div>
+                    <div class="poem-text">j'habite une ville qui se déplace
+le fleuve n'est pas son centre – 
+les pierres autour des ponts
+accumulent des troncs gonflés d'eau
+
+l'hiver s'est installé
+dans un wagon désaffecté
+arrive tôt et repart vite
+
+les bateaux partent
+dans l'insistance 
+la même péniche chargée de gravats
+qui remonte le courant 
+
+vers l'estuaire
+où les grues tournent 
+un vignoble évoque
+des buttes que le vent aplatit
+une enseigne de pharmacie 
+tout le temps allumée</div>
+                </div>
+                <div class="poem-column italian">
+                    <div class="poem-title">2. Abito una Città</div>
+                    <div class="poem-text">abito una città che si sposta
+il fiume non è il centro –
+le pietre attorno ai ponti
+accumulano tronchi gonfi d'acqua
+
+l'inverno si è installato
+in un vagone dismesso
+arriva presto e riparte in fretta
+
+le barche partono
+nell'insistenza
+la stessa chiatta carica di detriti
+che risale la corrente
+
+verso l'estuario
+dove le gru ruotano
+un vigneto evoca
+dune che il vento appiattisce
+una croce verde di farmacia
+sempre accesa</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagina 3 -->
+        <div class="page" data-page="3">
+            <div class="bilingual">
+                <div class="poem-column french">
+                    <div class="poem-title">3. Trois Ponts</div>
+                    <div class="poem-text">un pont avance sans rampe
+segment entre deux erreurs de plan
+
+un autre répète le mouvement
+on la passe en se croyant après
+
+celui qu'on prend sans vouloir 
+le tablier gondolé par les camions
+les joints de dilatation qui sifflent
+
+partout
+l'eau refuse d'être miroir
+reste comme ce qui est tombé
+seulement :
+un jerrycan  
+des gravillons
+la carcasse d'un parapluie
+
+les rives – ont
+ce tremblement fixe
+quand le pied cherche 
+et trouve le vide entre les planches</div>
+                </div>
+                <div class="poem-column italian">
+                    <div class="poem-title">3. Tre Ponti</div>
+                    <div class="poem-text">un ponte avanza senza rampa
+segmento fra due errori di progetto
+
+un altro ripete il movimento
+lo si attraversa credendo d'essere oltre
+
+quello che si prende senza volerlo
+l'impalcato ondulato dai camion
+i giunti di dilatazione che fischiano
+
+dappertutto
+l'acqua rifiuta d'essere specchio
+resta come ciò che è caduto
+solamente:
+una tanica
+della ghiaia
+la carcassa d'un ombrello
+
+le rive — hanno
+quel tremito fisso
+quando il piede cerca
+e trova il vuoto fra le assi</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagina 4 -->
+        <div class="page" data-page="4">
+            <div class="bilingual">
+                <div class="poem-column french">
+                    <div class="poem-title">4. La Lune toujours là</div>
+                    <div class="poem-text">elle ne tourne pas 
+tolère son clair 
+sur le béton des quais 
+les traces de pneu dans la pluie 
+durcie
+
+rémanence sans origine – 
+traverse les immeubles comme
+les paupières 
+son lait renversé 
+
+depuis longtemps ne signifie rien
+
+c'est pour cela qu'elle insiste
+comme l'empreinte sur le verre 
+le fil de fer qui tient encore 
+la mâchoire du crâne 
+blanchie
+dans le fossé</div>
+                </div>
+                <div class="poem-column italian">
+                    <div class="poem-title">4. La Luna sempre lì</div>
+                    <div class="poem-text">non gira
+tollera il suo chiaro
+sul calcestruzzo dei moli
+le tracce di pneumatico nella pioggia
+indurita
+
+remanenza senza origine – 
+attraversa gli edifici come
+le palpebre
+il suo latte rovesciato
+
+da tempo non significa più nulla
+
+per questo insiste
+come l'impronta sul vetro
+il filo di ferro che ancora tiene
+la mascella del cranio
+sbiancata
+nel fossato</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagina 5 -->
+        <div class="page" data-page="5">
+            <div class="bilingual">
+                <div class="poem-column french">
+                    <div class="poem-title">5. Portrait</div>
+                    <div class="poem-text">qui mesure les écarts
+entre la porte et son chambranle
+qui sent le jour où le bois a travaillé
+
+les ratés d'ajustement
+sous les doigts la poignée qui tourne
+dans le vide
+le robinet qui siffle
+
+qui persiste sans raison valable
+
+garde le clou planté de travers
+la charnière rouillée la voix basse
+avant que le jour décide 
+
+entre l'intention et la prise
+
+textes comme objets dont on a perdu la notice
+
+ça fonctionne quand même
+
+mal
+
+mais quand même</div>
+                </div>
+                <div class="poem-column italian">
+                    <div class="poem-title">5. Ritratto</div>
+                    <div class="poem-text">chi misura gli scarti
+fra la porta e il suo stipite
+chi sente il giorno in cui il legno ha ceduto
+
+le sfasature d'assestamento
+sotto le dita la maniglia che gira
+a vuoto
+il rubinetto che fischia
+
+chi persiste senza ragione valida
+
+tiene il chiodo piantato di traverso
+la cerniera arrugginita la voce bassa
+prima che il giorno decida 
+
+fra l'intenzione e la presa
+
+testi come oggetti di cui si è persa la guida
+
+funzionano lo stesso
+
+male
+
+ma lo stesso</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controlli navigazione -->
+    <div class="navigation">
+        <button class="nav-button" id="prev-btn" onclick="changePage(-1)">←</button>
+        <span class="page-indicator" id="page-indicator">1 / 5</span>
+        <button class="nav-button" id="next-btn" onclick="changePage(1)">→</button>
+    </div>
+
+    <footer>
+        <a href="../index.html#inediti">← Torna a Notariqon</a>
+    </footer>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function showPage(pageNum) {
+            // Nascondi tutte le pagine
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Mostra la pagina corrente
+            const activePage = document.querySelector(`.page[data-page="${pageNum}"]`);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+
+            // Aggiorna indicatore
+            document.getElementById('page-indicator').textContent = `${pageNum} / ${totalPages}`;
+
+            // Gestisci stato bottoni
+            document.getElementById('prev-btn').disabled = (pageNum === 1);
+            document.getElementById('next-btn').disabled = (pageNum === totalPages);
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                showPage(currentPage);
+            }
+        }
+
+        // Navigazione con tastiera
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changePage(-1);
+            if (e.key === 'ArrowRight') changePage(1);
+        });
+
+        // Inizializza
+        showPage(1);
+    </script>
+
+    <script src="../js/protezione.js"></script>
+</body>
+</html>
