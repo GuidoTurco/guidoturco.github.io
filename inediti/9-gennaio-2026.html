@@ -6,11 +6,11 @@
     <title>Parcours / Percorsi – Guido Turco</title>
     <style>
         body {
-            font-family: 'Helvetica', sans-serif;
+            font-family: Georgia, serif;
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: white;
+            background: #fdfbf7;
             color: #222;
             line-height: 1.8;
         }
@@ -40,6 +40,10 @@
             padding: 20px;
             background: #fafafa;
             border-left: 3px solid #333;
+            transition: opacity 0.4s ease;
+        }
+        .intro.hidden {
+            display: none;
         }
         
         /* Contenitore pagine */
@@ -477,6 +481,14 @@ ma lo stesso</div>
             // Gestisci stato bottoni
             document.getElementById('prev-btn').disabled = (pageNum === 1);
             document.getElementById('next-btn').disabled = (pageNum === totalPages);
+
+            // Nascondi intro dalla pagina 2 in poi
+            const intro = document.querySelector('.intro');
+            if (pageNum === 1) {
+                intro.classList.remove('hidden');
+            } else {
+                intro.classList.add('hidden');
+            }
 
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
