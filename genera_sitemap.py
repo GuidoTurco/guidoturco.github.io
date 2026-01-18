@@ -10,7 +10,7 @@ from datetime import datetime
 
 # Configurazione
 BASE_URL = "https://guidoturco.github.io"
-OUTPUT_FILE = "sitemap.xml"
+OUTPUT_FILE = "sitemap-2.xml"
 
 # Mappa sezioni -> cartelle e file JSON
 SEZIONI = [
