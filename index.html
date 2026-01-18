@@ -773,25 +773,51 @@ Quando sono giù mi faccio nevicare addosso, qualcosa che appena si posa scompar
         // Raccogli tutti i post con la loro sezione
         const allPosts = [];
         
-        tribuna.forEach(p => allPosts.push({...p, sezione: 'Tribuna Critica', sezId: 'tribuna', folder: 'recensioni'}));
-        inediti.forEach(p => allPosts.push({...p, sezione: 'Inediti', sezId: 'inediti', folder: 'inediti'}));
-        disiecta.forEach(p => allPosts.push({...p, sezione: 'Via Babelia', sezId: 'disiecta', folder: 'disiecta'}));
+        tribuna.forEach(p => allPosts.push({...p, sezione: 'Tribuna Critica', sezId: 'tribuna', folder: 'recensioni', isTribuna: true}));
+        inediti.forEach(p => allPosts.push({...p, sezione: 'Inediti', sezId: 'inediti', folder: 'inediti', isTribuna: false}));
+        disiecta.forEach(p => allPosts.push({...p, sezione: 'Via Babelia', sezId: 'disiecta', folder: 'disiecta', isTribuna: false}));
 
         if (allPosts.length === 0) return;
 
         // Ordina per data decrescente
         allPosts.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
 
-        // Trova la data più recente
-        const latestDate = allPosts[0].date;
+        // Data più recente in assoluto
+        const mostRecentDate = parseItalianDate(allPosts[0].date);
         
-        // Filtra tutti i post con la data più recente
-        const latestPosts = allPosts.filter(p => p.date === latestDate);
+        // Filtra i post da mostrare con logica differenziata
+        const postsToShow = [];
+        
+        // 1. Aggiungi l'ultimo post di Tribuna Critica (più recente in assoluto)
+        const latestTribuna = allPosts.find(p => p.isTribuna);
+        if (latestTribuna) {
+            postsToShow.push(latestTribuna);
+        }
+        
+        // 2. Aggiungi post da Inediti e Via Babelia se pubblicati negli ultimi 7 giorni
+        const sevenDaysAgo = new Date(mostRecentDate);
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+        
+        allPosts.forEach(post => {
+            if (!post.isTribuna) {
+                const postDate = parseItalianDate(post.date);
+                if (postDate >= sevenDaysAgo) {
+                    // Evita duplicati (nel caso ci siano più post nella stessa sezione)
+                    const alreadyAdded = postsToShow.find(p => p.sezId === post.sezId);
+                    if (!alreadyAdded) {
+                        postsToShow.push(post);
+                    }
+                }
+            }
+        });
+        
+        // Ordina i post selezionati per data (più recenti prima)
+        postsToShow.sort((a, b) => parseItalianDate(b.date) - parseItalianDate(a.date));
 
         const container = document.getElementById('ultimo-items');
         let html = '';
 
-        latestPosts.forEach(post => {
+        postsToShow.forEach(post => {
             const slug = makeSlug(post.date);
             const filename = `${post.folder}/${slug}.html`;
             
