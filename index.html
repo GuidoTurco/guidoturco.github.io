@@ -91,6 +91,71 @@
             background: #402d0c;
         }
         
+        .contatti {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #e0dcc0;
+            text-align: center;
+        }
+        
+        .contatti h2 {
+            font-size: 1.5em;
+            color: #5a3f11;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        
+        .contatti p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+        
+        .contatti form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .contatti input,
+        .contatti textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 0.95em;
+            background: #fafafa;
+        }
+        
+        .contatti input:focus,
+        .contatti textarea:focus {
+            outline: none;
+            border-color: #5a3f11;
+            background: #fff;
+        }
+        
+        .contatti textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .contatti button {
+            width: 100%;
+            padding: 12px;
+            background: #5a3f11;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .contatti button:hover {
+            background: #402d0c;
+        }
+        
         footer {
             margin-top: 50px;
             padding-top: 30px;
@@ -116,11 +181,22 @@
         <p class="subtitle">Tribuna Critica</p>
         
         <div class="description">
-            <p>Progetto di critica letteraria.</p>
-            <p>Schede di analisi poetica costruite con metodo rigoroso: costruzione, ritmo, evocazione, rapporto col lettore.</p>
+            <p>Progetto di critica letteraria a circolazione ristretta.</p>
+            <p>Schede di analisi poetica costruite su metodo rigoroso: costruzione, ritmo, evocazione, rapporto col lettore.</p>
         </div>
         
         <a href="recensioni/archivio.html" class="btn">Accedi alla Tribuna Critica</a>
+        
+        <div class="contatti">
+            <h2>Contatti</h2>
+            <p>Per commenti, suggerimenti o richieste di accesso alla Tribuna:</p>
+            <form action="https://formspree.io/f/mqeedvro" method="POST">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="messaggio" placeholder="Messaggio" rows="4" required></textarea>
+                <button type="submit">Invia</button>
+            </form>
+        </div>
         
         <footer>
             Notariqon – casa d'Arno
