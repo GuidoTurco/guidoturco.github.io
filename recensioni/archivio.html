@@ -48,6 +48,37 @@
             border-radius: 4px;
         }
         
+        /* Select autori mobile */
+        #authors-mobile {
+            display: none;
+            margin-bottom: 25px;
+        }
+        
+        #authors-mobile label {
+            display: block;
+            font-size: 0.95em;
+            color: #5a3f11;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        #authors-mobile select {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1em;
+            font-family: 'Helvetica', sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fffff5;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #authors-mobile select:focus {
+            outline: none;
+            border-color: #5a3f11;
+        }
+        
         /* Sidebar Autori in Tribuna */
         #authors-cloud {
             position: fixed;
@@ -167,6 +198,10 @@
                 display: none; 
             }
             
+            #authors-mobile {
+                display: block;
+            }
+            
             .archive-grid {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
@@ -194,6 +229,14 @@
     </header>
 
     <div class="count" id="total-count">Caricamento...</div>
+
+    <!-- Select autori per mobile -->
+    <div id="authors-mobile">
+        <label for="author-select">Autori in Tribuna</label>
+        <select id="author-select">
+            <option value="">Tutti gli autori</option>
+        </select>
+    </div>
 
     <div class="archive-grid" id="archive-content">
         <div class="scheda-card">Caricamento archivio...</div>
@@ -283,6 +326,27 @@
             });
 
             cloudContainer.innerHTML = html;
+            
+            // Popola anche il select mobile
+            const selectMobile = document.getElementById('author-select');
+            if (selectMobile) {
+                let optionsHtml = '<option value="">Tutti gli autori</option>';
+                authors.forEach(author => {
+                    const count = authorCounts[author];
+                    optionsHtml += `<option value="${author}">${author} (${count})</option>`;
+                });
+                selectMobile.innerHTML = optionsHtml;
+                
+                // Event listener per il select
+                selectMobile.addEventListener('change', function() {
+                    const selectedAuthor = this.value;
+                    if (selectedAuthor) {
+                        filterByAuthor(selectedAuthor);
+                    } else {
+                        showAll();
+                    }
+                });
+            }
         }
 
         // Filtra schede per autore (scroll alla prima scheda)
