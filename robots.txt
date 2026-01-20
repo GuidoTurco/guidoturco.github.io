@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://guidoturco.github.io/sitemap-2.xml
+Disallow: /
