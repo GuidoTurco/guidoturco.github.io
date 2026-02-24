@@ -10,6 +10,13 @@
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+        <title>Tribuna Critica: [The lamps are burning in the synagogue...] – Charles Reznikoff</title>
+        <link>https://guidoturco.github.io/recensioni/25-febbraio-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/25-febbraio-2026.html</guid>
+        <pubDate>Wed, 25 Feb 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "[The lamps are burning in the synagogue...]" di Charles Reznikoff</description>
+    </item>
+    <item>
         <title>Tribuna Critica: Villa Nena – Giampiero Neri</title>
         <link>https://guidoturco.github.io/recensioni/24-febbraio-2026.html</link>
         <guid>https://guidoturco.github.io/recensioni/24-febbraio-2026.html</guid>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/24-dicembre-2025.html</guid>
         <pubDate>Wed, 24 Dec 2025 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Restare" di Pierluigi Cappello</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Prepari la tavola ed io spesso penso alla morte – Roberto Modafferi</title>
-        <link>https://guidoturco.github.io/recensioni/23-dicembre-2025.html</link>
-        <guid>https://guidoturco.github.io/recensioni/23-dicembre-2025.html</guid>
-        <pubDate>Tue, 23 Dec 2025 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Prepari la tavola ed io spesso penso alla morte" di Roberto Modafferi</description>
     </item>
 </channel>
 </rss>
