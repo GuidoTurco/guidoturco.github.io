@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 03 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Margo – Fanny Howe</title>
+        <link>https://guidoturco.github.io/recensioni/5-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/5-marzo-2026.html</guid>
+        <pubDate>Thu, 05 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Margo" di Fanny Howe</description>
+    </item>
     <item>
         <title>Tribuna Critica: Tutti gli occhi che ho aperto – Franca Mancinelli</title>
         <link>https://guidoturco.github.io/recensioni/4-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/5-gennaio-2026.html</guid>
         <pubDate>Mon, 05 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "La vita silenziosa" di Andrea Zanzotto</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Il mondo sottostante – Franco Marcoaldi</title>
-        <link>https://guidoturco.github.io/recensioni/3-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/3-gennaio-2026.html</guid>
-        <pubDate>Sat, 03 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Il mondo sottostante" di Franco Marcoaldi</description>
     </item>
 </channel>
 </rss>
