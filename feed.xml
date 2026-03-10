@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 09 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Mi ha assalito un'acre nostalgia – Yehuda Amichai</title>
+        <link>https://guidoturco.github.io/recensioni/11-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/11-marzo-2026.html</guid>
+        <pubDate>Wed, 11 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Mi ha assalito un'acre nostalgia" di Yehuda Amichai</description>
+    </item>
     <item>
         <title>Tribuna Critica: Eighth Sky – Michael Palmer</title>
         <link>https://guidoturco.github.io/recensioni/10-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/10-gennaio-2026.html</guid>
         <pubDate>Sat, 10 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Senza titolo" di Gianni D'Elia</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Ah smetti sedia di esser così sedia! – Patrizia Cavalli</title>
-        <link>https://guidoturco.github.io/recensioni/9-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/9-gennaio-2026.html</guid>
-        <pubDate>Fri, 09 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Ah smetti sedia di esser così sedia!" di Patrizia Cavalli</description>
     </item>
 </channel>
 </rss>
