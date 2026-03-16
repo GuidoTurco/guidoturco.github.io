@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Sun, 15 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Il panorama di Betlemme – Francesco De Gregori</title>
+        <link>https://guidoturco.github.io/recensioni/17-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/17-marzo-2026.html</guid>
+        <pubDate>Tue, 17 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Il panorama di Betlemme" di Francesco De Gregori</description>
+    </item>
     <item>
         <title>Tribuna Critica: Amanda Lear – Francesco Bianconi (Baustelle)</title>
         <link>https://guidoturco.github.io/recensioni/16-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/16-gennaio-2026.html</guid>
         <pubDate>Fri, 16 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Vento di notte" di Agostino Richelmy</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Punteggiatura animale – Ermanno Krumm</title>
-        <link>https://guidoturco.github.io/recensioni/15-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/15-gennaio-2026.html</guid>
-        <pubDate>Thu, 15 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Punteggiatura animale" di Ermanno Krumm</description>
     </item>
 </channel>
 </rss>
