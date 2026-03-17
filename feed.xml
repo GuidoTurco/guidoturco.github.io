@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 16 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Diavolo Rosso – Paolo Conte</title>
+        <link>https://guidoturco.github.io/recensioni/18-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/18-marzo-2026.html</guid>
+        <pubDate>Wed, 18 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Diavolo Rosso" di Paolo Conte</description>
+    </item>
     <item>
         <title>Tribuna Critica: Il panorama di Betlemme – Francesco De Gregori</title>
         <link>https://guidoturco.github.io/recensioni/17-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/17-gennaio-2026.html</guid>
         <pubDate>Sat, 17 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Mi guardi con gli occhi confusi; Due giorni fa; Quando l'albero era l'albero" di Margherita Rimi</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Vento di notte – Agostino Richelmy</title>
-        <link>https://guidoturco.github.io/recensioni/16-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/16-gennaio-2026.html</guid>
-        <pubDate>Fri, 16 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Vento di notte" di Agostino Richelmy</description>
     </item>
 </channel>
 </rss>
