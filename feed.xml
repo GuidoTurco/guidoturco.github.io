@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Tue, 17 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: La nevicata del '56 – Franco Califano</title>
+        <link>https://guidoturco.github.io/recensioni/19-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/19-marzo-2026.html</guid>
+        <pubDate>Thu, 19 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "La nevicata del '56" di Franco Califano</description>
+    </item>
     <item>
         <title>Tribuna Critica: Diavolo Rosso – Paolo Conte</title>
         <link>https://guidoturco.github.io/recensioni/18-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/19-gennaio-2026.html</guid>
         <pubDate>Mon, 19 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Elogio dell'infanzia (Lied vom Kindsein)" di Peter Handke</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Mi guardi con gli occhi confusi; Due giorni fa; Quando l'albero era l'albero – Margherita Rimi</title>
-        <link>https://guidoturco.github.io/recensioni/17-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/17-gennaio-2026.html</guid>
-        <pubDate>Sat, 17 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Mi guardi con gli occhi confusi; Due giorni fa; Quando l'albero era l'albero" di Margherita Rimi</description>
     </item>
 </channel>
 </rss>
