@@ -10,6 +10,13 @@
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+        <title>Tribuna Critica: Shut Out the Light – Bruce Springsteen</title>
+        <link>https://guidoturco.github.io/recensioni/24-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/24-marzo-2026.html</guid>
+        <pubDate>Tue, 24 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Shut Out the Light" di Bruce Springsteen</description>
+    </item>
+    <item>
         <title>Tribuna Critica: One More Cup of Coffee (Valley Below) – Bob Dylan</title>
         <link>https://guidoturco.github.io/recensioni/23-marzo-2026.html</link>
         <guid>https://guidoturco.github.io/recensioni/23-marzo-2026.html</guid>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/23-gennaio-2026.html</guid>
         <pubDate>Fri, 23 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "La donna linda" di Virginia Veludo</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Frissi d'amor con arte, d'amor scrissi – Patrizia Valduga</title>
-        <link>https://guidoturco.github.io/recensioni/22-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/22-gennaio-2026.html</guid>
-        <pubDate>Thu, 22 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Frissi d'amor con arte, d'amor scrissi" di Patrizia Valduga</description>
     </item>
 </channel>
 </rss>
