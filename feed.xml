@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Sat, 21 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: One More Cup of Coffee (Valley Below) – Bob Dylan</title>
+        <link>https://guidoturco.github.io/recensioni/23-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/23-marzo-2026.html</guid>
+        <pubDate>Mon, 23 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "One More Cup of Coffee (Valley Below)" di Bob Dylan</description>
+    </item>
     <item>
         <title>Tribuna Critica: Io sono un uomo libero – Ivano Fossati</title>
         <link>https://guidoturco.github.io/recensioni/21-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/22-gennaio-2026.html</guid>
         <pubDate>Thu, 22 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Frissi d'amor con arte, d'amor scrissi" di Patrizia Valduga</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Le sei del mattino – Vittorio Sereni</title>
-        <link>https://guidoturco.github.io/recensioni/21-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/21-gennaio-2026.html</guid>
-        <pubDate>Wed, 21 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Le sei del mattino" di Vittorio Sereni</description>
     </item>
 </channel>
 </rss>
