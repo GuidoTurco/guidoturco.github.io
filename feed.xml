@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Mon, 23 Mar 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Hallelujah – Leonard Cohen</title>
+        <link>https://guidoturco.github.io/recensioni/25-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/25-marzo-2026.html</guid>
+        <pubDate>Wed, 25 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Hallelujah" di Leonard Cohen</description>
+    </item>
     <item>
         <title>Tribuna Critica: Shut Out the Light – Bruce Springsteen</title>
         <link>https://guidoturco.github.io/recensioni/24-marzo-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/24-gennaio-2026.html</guid>
         <pubDate>Sat, 24 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Amleto" di Dario Bellezza</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: La donna linda – Virginia Veludo</title>
-        <link>https://guidoturco.github.io/recensioni/23-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/23-gennaio-2026.html</guid>
-        <pubDate>Fri, 23 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "La donna linda" di Virginia Veludo</description>
     </item>
 </channel>
 </rss>
