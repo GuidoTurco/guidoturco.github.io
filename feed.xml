@@ -10,6 +10,13 @@
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
+        <title>Tribuna Critica: Je l'aime à mourir – Francis Cabrel</title>
+        <link>https://guidoturco.github.io/recensioni/31-marzo-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/31-marzo-2026.html</guid>
+        <pubDate>Tue, 31 Mar 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Je l'aime à mourir" di Francis Cabrel</description>
+    </item>
+    <item>
         <title>Tribuna Critica: Le Secret des Banquises – Alain Bashung</title>
         <link>https://guidoturco.github.io/recensioni/30-marzo-2026.html</link>
         <guid>https://guidoturco.github.io/recensioni/30-marzo-2026.html</guid>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/30-gennaio-2026.html</guid>
         <pubDate>Fri, 30 Jan 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Quanti" di Antonella Anedda</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Acqua acqua fuoco – Laura Accerboni</title>
-        <link>https://guidoturco.github.io/recensioni/29-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/29-gennaio-2026.html</guid>
-        <pubDate>Thu, 29 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Acqua acqua fuoco" di Laura Accerboni</description>
     </item>
 </channel>
 </rss>
