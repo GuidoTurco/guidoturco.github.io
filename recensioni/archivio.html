@@ -301,11 +301,15 @@
             const minFont = 0.8;
             const maxFont = 1.5;
 
-            // Ordina alfabeticamente per cognome
+            // Ordina alfabeticamente per cognome (ignora suffissi tra parentesi)
+            function extractCognome(name) {
+                const clean = name.replace(/\s*\(.*\)/g, '').trim();
+                const parts = clean.split(' ');
+                return parts[parts.length - 1].toLowerCase();
+            }
+
             authors.sort((a, b) => {
-                const cognomeA = a.trim().split(' ').pop().toLowerCase();
-                const cognomeB = b.trim().split(' ').pop().toLowerCase();
-                return cognomeA.localeCompare(cognomeB, 'it');
+                return extractCognome(a).localeCompare(extractCognome(b), 'it');
             });
 
             let html = '';
