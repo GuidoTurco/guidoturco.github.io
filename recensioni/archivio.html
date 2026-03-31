@@ -320,11 +320,12 @@
                     fontSize = minFont + ((count - minCount) / (maxCount - minCount)) * (maxFont - minFont);
                 }
                 
-                // Separa nome e cognome per mettere il cognome in grassetto
-                const parts = author.trim().split(' ');
-                const cognome = parts.pop();
-                const nome = parts.join(' ');
-                const displayName = nome ? `${nome} <strong>${cognome}</strong>` : `<strong>${cognome}</strong>`;
+                // Mette in grassetto il cognome vero (ignorando parentesi)
+                const cognome = extractCognome(author);
+                const displayName = author.replace(
+                    new RegExp(`(${cognome})`, 'i'),
+                    '<strong>$1</strong>'
+                );
                 
                 html += `<a href="#" onclick="filterByAuthor('${author.replace(/'/g, "\\'")}'); return false;" style="font-size: ${fontSize}em;">${displayName} (${count})</a>`;
             });
