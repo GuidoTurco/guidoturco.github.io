@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Wed, 01 Apr 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Mistral gagnant – Renaud</title>
+        <link>https://guidoturco.github.io/recensioni/2-aprile-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/2-aprile-2026.html</guid>
+        <pubDate>Thu, 02 Apr 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Mistral gagnant" di Renaud</description>
+    </item>
     <item>
         <title>Tribuna Critica: Bouquet de nerfs – Noir Désir (Bertrand Cantat)</title>
         <link>https://guidoturco.github.io/recensioni/1-aprile-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/2-febbraio-2026.html</guid>
         <pubDate>Mon, 02 Feb 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "Nel buio di stelle marine" di Isabella Leardini</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: Bretella rossa – Julian Zhara</title>
-        <link>https://guidoturco.github.io/recensioni/31-gennaio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/31-gennaio-2026.html</guid>
-        <pubDate>Sat, 31 Jan 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "Bretella rossa" di Julian Zhara</description>
     </item>
 </channel>
 </rss>
