@@ -6,9 +6,16 @@
     <link>https://guidoturco.github.io</link>
     <description>Qualcosa di me, note, scritti, digressioni, riflessioni e varia umanità</description>
     <language>it-IT</language>
-    <lastBuildDate>Sat, 04 Apr 2026 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://guidoturco.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 
+    <item>
+        <title>Tribuna Critica: Versi in vacanza – Alberto Volpi</title>
+        <link>https://guidoturco.github.io/recensioni/6-aprile-2026.html</link>
+        <guid>https://guidoturco.github.io/recensioni/6-aprile-2026.html</guid>
+        <pubDate>Mon, 06 Apr 2026 12:00:00 +0100</pubDate>
+        <description>Scheda critica di "Versi in vacanza" di Alberto Volpi</description>
+    </item>
     <item>
         <title>Tribuna Critica: La ballade de Jim – Alain Souchon</title>
         <link>https://guidoturco.github.io/recensioni/4-aprile-2026.html</link>
@@ -351,13 +358,6 @@
         <guid>https://guidoturco.github.io/recensioni/5-febbraio-2026.html</guid>
         <pubDate>Thu, 05 Feb 2026 12:00:00 +0100</pubDate>
         <description>Scheda critica di "A Giuseppe Ungaretti, visto di notte alla televisione leggere "I fiumi"" di Davide Rondoni</description>
-    </item>
-    <item>
-        <title>Tribuna Critica: January 31 – Jesse Nathan</title>
-        <link>https://guidoturco.github.io/recensioni/4-febbraio-2026.html</link>
-        <guid>https://guidoturco.github.io/recensioni/4-febbraio-2026.html</guid>
-        <pubDate>Wed, 04 Feb 2026 12:00:00 +0100</pubDate>
-        <description>Scheda critica di "January 31" di Jesse Nathan</description>
     </item>
 </channel>
 </rss>
