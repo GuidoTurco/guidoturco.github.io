@@ -301,11 +301,18 @@
             const minFont = 0.8;
             const maxFont = 1.5;
 
-            // Ordina alfabeticamente per cognome (ignora suffissi tra parentesi)
+            // Ordina alfabeticamente per cognome (ignora suffissi tra parentesi, gestisce particelle)
+            const particelle = new Set(['di', 'de', 'del', 'della', 'degli', 'dei', 'da', 'dal', 'du', 'van', 'von', 'le', 'la', 'lo', 'feat.']);
+
             function extractCognome(name) {
                 const clean = name.replace(/\s*\(.*\)/g, '').trim();
                 const parts = clean.split(' ');
-                return parts[parts.length - 1].toLowerCase();
+                // Risale all'indietro finché trova una particella prima dell'ultima parola
+                let start = parts.length - 1;
+                while (start > 0 && particelle.has(parts[start - 1].toLowerCase())) {
+                    start--;
+                }
+                return parts.slice(start).join(' ').toLowerCase();
             }
 
             authors.sort((a, b) => {
@@ -320,10 +327,11 @@
                     fontSize = minFont + ((count - minCount) / (maxCount - minCount)) * (maxFont - minFont);
                 }
                 
-                // Mette in grassetto il cognome vero (ignorando parentesi)
+                // Mette in grassetto il cognome vero (con particelle, senza parentesi)
                 const cognome = extractCognome(author);
+                const escapedCognome = cognome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                 const displayName = author.replace(
-                    new RegExp(`(${cognome})`, 'i'),
+                    new RegExp(`(${escapedCognome})`, 'i'),
                     '<strong>$1</strong>'
                 );
                 
