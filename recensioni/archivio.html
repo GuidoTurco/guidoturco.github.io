@@ -399,7 +399,9 @@
         // Carica e visualizza l'archivio completo
         async function loadArchive() {
             try {
-                const response = await fetch('../data/tribuna.json');
+                // Cache-busting: forza sempre una richiesta fresca, bypassando
+                // sia la cache del browser sia la CDN di GitHub Pages
+                const response = await fetch('../data/tribuna.json?t=' + Date.now(), { cache: 'no-store' });
                 const posts = await response.json();
 
                 // Ordina per data decrescente
